@@ -14,6 +14,19 @@ section p{background-color: #ccc;}
 태그 모든 section 후손 모든 p*
 /* section > p  {backgrond-color=#ccc} */
 section >p {background-color: #ccc;}
+/* 모든 section태그 중 모든 p 태그*/
+/* 모든 section태그의 직계 자식 모든 p태그 
+section >.box>p 
+모든 section태그의 직계 자식 모든 .box태그의 자식 모든 p
+section > .box>p
+section > .box>p {color:#f00} */
+/* 
+형요소 ~아우요소
+요소1~요소2 인접한 요소
+section h2~p{color:#f00} */
+section h2~ p{color: #f00;}
+section > div.box>p */
+section p {color:#f00;}
   </style>
 </head>
 <body>

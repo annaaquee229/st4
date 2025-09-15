@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자연습</title>
+  <style>
+#section1{background-color: #86c;}
+    /*section{background-color:#86c;}*/
+    /*html문서내 모든 #section1을 선택해서 배경색 #86c로 지정*/
+    
+section p{background-color: #ccc;}
+/* section p ->조상 후손 공백문자는 후손 선택자 태그
+태그 모든 section 후손 모든 p*
+/* section > p  {backgrond-color=#ccc} */
+section >p {background-color: #ccc;}
+  </style>
+</head>
+<body>
+<!--#wrap>header+.container+footer -->
+<div id="wrap">
+  <haeder>헤더</haeder>
+  <div class="container">
+<!--section#section$*3-->
+<section id="section1">
+  <!-- p+.box>h1+p*2-->
+  <p>섹션슬로건1</p>
+  <div class="box">
+    <h2>섹션타이틀</h2>
+    <p>이벤트설명1</p>
+    <p>이벤트설명2</p>
+  </div>
+</section>
+<section id="section2"> 
+  <p>섹션슬로건2</p>
+  <div class="box">
+    <h2>섹션타이틀</h2>
+    <p>이벤트설명1</p>
+    <p>이벤트설명2</p>
+  </div></section>
+<section id="section3"> 
+  <p>섹션슬로건3</p>
+  <div class="box">
+    <h2>섹션타이틀</h2>
+    <p>이벤트설명1</p>
+    <p>이벤트설명2</p>
+  </div></section>
+  </div>
+  <!-- //.container-->
+  <footer></footer>
+</div>
+  </div>
+</body>
+</html>

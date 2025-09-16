@@ -6,27 +6,58 @@
   <title>인라인레벨과 블록레벨</title>
 <style>
   *{margin:0; padding:0;}
+
 .container{
   background-color: #ccc;
-  width:80%;
+  width:100%;
   margin:0 auto;
   }
+  .inner{
+    width:80%;
+    margin:0 auto;
+    background-color: #ef6;
+    padding:50px 20px;
+  }
+  .box{
+    /* margin:50px auto; */
+    margin-bottom:50px;
+    background-color:#fbf;
+  }
+  .box:last-chlid:{
+    margin-bottom: 0px;
+  }
+  /* 인라인레벨 width.height 지정x
+         수직 여백 정상적으로 적용x
+        크기는 포함하는 내용이 결정 */
+  .box span{
+    color:#f00;
+    font-weight:bold;
+    font-size: large;
+    background-color: #ef8;
+    padding:16px;
+    margin:8px;
+    /* width:200px; <--이건 안먹음 */
+  }
+  
 </style>
 </head>
 <body>
   <!-- .container>.box.box$*2>lorem -->
   <div class="container">
     <div class="inner">
-  
-      <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, temporibus placeat expedita,
+
+      <div class="box box1">Lorem <span>ipsum</span> dolor sit amet consectetur adipisicing <span>elit</span> Eius, temporibus placeat expedita,
         enim quasi maxime porro officiis reiciendis aut quisquam hic soluta nulla doloremque mollitia tenetur repellat
         officia rerum! Beatae.</div>
-  
+
       <div class="box box2">Animi repudiandae et temporibus ullam ea numquam? Debitis dolorem vero corporis nihil ipsam
-        labore alias minima magni ad doloremque eveniet nostrum laudantium tempora minus ratione enim laborum voluptatem,
-        impedit ex!</div>
-  
+        labore alias minima magni ad doloremque eveniet nostrum laudantium tempora minus ratione enim laborum
+        voluptatem,impedit ex!</div>
+      <div class="box box3">Animi repudiandae et temporibus ullam ea numquam? Debitis dolorem vero corporis nihil ipsam
+        labore alias minima magni ad doloremque eveniet nostrum laudantium tempora minus ratione enim laborum
+        voluptatem,impedit ex!</div>
     </div>
   </div>
 </body>
+
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말줄임표css</title>
+<style>
+  *{margin: 0; padding: 0;}
+  .box{
+    margin:50px;
+    padding:1em;
+    background-color: #ccc;
+  }
+/* 여러줄 말줄임 */
+  .box1{
+    /* white-space: normal; */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    width: 80%;
+    height: 60px;
+  }
+  .box2{
+    white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+  }
+  /* overflow */
+  /* 박스모델
+  너비 : 부모의 콘텐츠 영역
+  높이 : 자식의 (콘텐츠)의 높이 */
+  .box3,
+  .box4,
+  .box5{width: 400px;
+        height: 30px;}
+        /* overflow:visible */
+.box3{overflow: visible;}
+.box4{overflow: hidden;} 
+.box5{overflow: auto;}     
+/* overflow-x축 y축 따로 지정 */
+</style>
+</head>
+<body>
+  <!-- div.box.box$*2>lorem -->
+  <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod adipisci in sapiente maiores tenetur delectus quidem quis, voluptates est quos ea dicta tempora facere suscipit recusandae aliquam reiciendis. Ipsum, vero!orem ipsum dolor sit amet consectetur adipisicing elit. Quod adipisci in sapiente maiores tenetur delectus quidem quis, voluptates est quos ea dicta tempora facere suscipit recusandae aliquam reiciendis. Ipsum, vero!</div>
+  <div class="box box2">Laboriosam debitis impedit eum amet nobis, id odio consequuntur optio velit corporis fugiat sit illum quas cupiditate nemo tempore, eos sed labore esse nihil eaque? Reprehenderit accusantium omnis nam quidem.</div>
+  <hr>
+  <!-- .box.box$@3*2 -->
+  <div class="box box3">>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis reprehenderit iure voluptas voluptatum magnam vel. Accusantium molestias, aspernatur officiis laudantium nisi repudiandae quam. In sequi blanditiis sit vitae doloribus eius.</div>
+  <div class="box box4">>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat dignissimos consequatur, est nemo quis possimus earum cum facilis rerum et sed fuga nostrum corporis corrupti odit quos iste vel quas.</div>
+  <div class="box box5">>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat dignissimos consequatur, est nemo quis possimus earum cum facilis rerum et sed fuga nostrum corporis corrupti odit quos iste vel quas.</div>
+</body>
+</html>

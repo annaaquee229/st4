@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background연습-포트폴리오</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+<!--   font-family: "Noto Sans KR", sans-serif;-->
+<style>
+  body{
+    font-size: "  font-family: "Noto Sans KR", sans-serif";
+    font-size: 25px;
+    line-height: 1.6;
+  }
+  *{margin: 0; padding: 0;}
+.section1{
+  width: auto; 
+  /* 기본값이라 생략가능 */
+  margin-top: 50px;
+  /* background-color: #ccc; */
+  margin-top: 50px;
+  
+}
+ul.skill-list{
+ width: 85%;
+ min-width: 1000px;
+ max-width: 1400px;
+ margin: 0 auto;
+ /* background-color: #ef6; */
+ list-style: none; /*리스트 스타일 점 삭제*/
+ text-align: center;
+}
+li.skill-item{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 300px;  height: 340px;
+  padding-top: 250px;
+  margin-right: 40px;
+  /* background-color: #dbb; */
+  background-size:200px;
+  background-repeat: no-repeat;
+  background-position: center 20px;
+}
+li.skill-item1{
+  vertical-align: top;
+  background-image: url(./background/web-design.gif);}
+li.skill-item2{
+  vertical-align: top;
+  background-image: url(./background/website.gif);}
+li.skill-item3{
+  background-image: url(./background/online-shopping.gif);
+  margin-right: 0;
+}
+
+li.skill-item .title{
+  font-size: 2em;
+  font-weight: 40;
+}
+li.skill-item .desc{
+  font-size: 0.6em;
+}
+</style>
+</head>
+<body>
+  <!-- section>ul.skill-list>li.skill-item$.skill-item*3>p.tltle+p.desc -->
+
+  <section class="section1">
+    <ul class="skill-list">
+      <li class="skill-item1 skill-item">
+        <p class="tltle">design</p>
+        <p class="desc">Lorem ipsum dolor sit amet.</p>
+      </li>
+      <li class="skill-item2 skill-item">
+        <p class="tltle">HTML/CSS</p>
+        <p class="desc">Lorem <strong>dolor</strong>  sit amet consectetur.</p>
+      </li>
+      <li class="skill-item3 skill-item">
+        <p class="tltle">E-Commerce</p>
+        <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>

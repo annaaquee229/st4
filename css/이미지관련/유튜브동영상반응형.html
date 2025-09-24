@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유튜브동영상-반응형</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{margin: 50px;}
+    .media-box{
+      /* 화면의 크기가 부모의 80%를 차지하지만 
+      최소 360px 최대 768px 사이에 유연하게 크기가 조절 됨(80%) */
+      width: 80%; 
+      max-width: 768px; 
+      min-width: 360px;
+    }
+    .media-box .media-wrap{
+      position: relative; /*포지션 반드시 지정 !!! 다른 요소에 레이아웃 변화를 주지 않으면서 기준 요소 가능*/ 
+      width: auto; /*부모의 너비의 콘텐츠 영역을 써라*/
+      padding: 56.25%; /*동영상의 크기가 16:5일 경우 56.25% , 4:3일 경우 75% */
+    background-color: #ccc;
+    border: 1px solid #000;
+  }
+
+    .media-box .media-wrap iframe{
+      /* 1. 기준 ->조상중  position:relative, position:absolute, position:fixed, position:sticky
+         2. 크기 ->width~height
+         3. 위치 ->left/right/top/bottom
+         
+         */
+      position: absolute; /*media-wrap이 iframe의 크기를 인식하지 못하게*/
+      left: 0; top: 0; /*media-wrap의 0,0으로 들어가게 위치 지정*/
+      width: 100%; /*기준요소의 너비*/
+      height: 100%; /*기준요소의 높이*/
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- .media-box>.media-wrap -->
+    <div class="media-box">
+      <div class="media-wrap">
+        <!-- 유튜브 동영상 --><iframe width="560" height="315" src="https://www.youtube.com/embed/Kz2BsKX04ek?si=ZHOMZMZJ2-5-s89M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

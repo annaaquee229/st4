@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유튜브동영상-반응형</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container{margin: 50px;}
+    .media-box{
+      /* 화면의 크기가 부모의 80%를 차지하지만 
+      최소 360px 최대 768px 사이에 유연하게 크기가 조절 됨(80%) */
+      width: 80%; 
+      max-width: 768px; 
+      min-width: 360px;
+    }
+    .media-box .media-wrap{
+    /* 동영상에 크기를 지정 */
+        width: 100%;
+        aspect-ratio: 16/9;
+    background-color: #ccc;
+    border: 1px solid #000;
+  }
+
+    .media-box .media-wrap iframe{
+     
+      width: 100%; /*기준요소의 너비*/
+      height: 100%; /*기준요소의 높이*/
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- .media-box>.media-wrap -->
+    <div class="media-box">
+      <div class="media-wrap">
+        <!-- 유튜브 동영상 --><iframe width="560" height="315" src="https://www.youtube.com/embed/Kz2BsKX04ek?si=ZHOMZMZJ2-5-s89M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

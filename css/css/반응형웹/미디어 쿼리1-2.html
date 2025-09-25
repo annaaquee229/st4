@@ -24,7 +24,7 @@
     .media-txt {
       /*       1. 기준 브라우저      2. 크기 :지정하지 않으면 자식요소의 너비 높이가 크기 결정      3. 위치 오른쪽 위에 고정      right:  top:;      */
       position: fixed;
-      right: 50px;
+      left:  50px;
       top: 50px;
       background-color: #fff;
       border: 1px solid #000;
@@ -55,6 +55,8 @@
       background-color: rgba(255, 255, 255, 0.3);
       /* 모서리 둥글게 */
       border-radius: 20px;
+      /* 그림자넣기 */
+      box-shadow: 0px 0px 40px 4px rgba(0, 0, 0, 0.5);    
     }
 
     .media-box .media-wrap {
@@ -70,6 +72,25 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+    @media (max-width:1199.98px){
+      /* 1200px보다 너비가 작은 미디어에는 
+      .container 에 사용되는 백그라운드 이미지 (컬러그라디언트) */
+      .container{
+        background: #f2b8ce;
+background: linear-gradient(147deg, rgba(242, 184, 206, 1) 0%, rgba(255, 214, 176, 0) 98%);
+      }
+    @media (max-width:767.98px)
+    /* 767.98px이하인 미디어는 미디어의 디자인 css */
+    {
+      .container{
+        background: #ef6;
+      }
+    }
+    .media-box{
+      padding: 16px;
+      border-radius: 15px;
+    }
     }
   </style>
 </head>

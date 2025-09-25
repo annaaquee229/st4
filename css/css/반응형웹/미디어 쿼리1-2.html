@@ -30,10 +30,33 @@
       border: 1px solid #000;
       border-radius: 0.5em;
       padding: 0.5em;
+      z-index: 100;
     }
 
     .media-txt::before {
-      content: "pc";
+      content: "wide desk";
+    }
+    @media (max-width:1199.98px){
+      .media-txt::before {
+        content: "desk";
+      }
+    }
+    @media (max-width:1023.98px){
+      .media-txt::before{
+      content: "mobile";}
+    }
+    @media (max-width:767.98px){
+      .media-txt::before{
+      content: "tablet";}
+    }
+    @media (max-width:576.98px){
+      .media-txt::before{
+      content: "mobile";}
+    }
+ @media (max-width:576.98px)and (orientation: portrait){
+      .media-txt::before{
+      content: "mobile potrait";}
+      
     }
 
     /* 1. 이미지과 브라우저 가운데 위치  2. 이미지크기는 이미지 비율을 따르면서 너비를 지정 */
@@ -92,6 +115,8 @@ background: linear-gradient(147deg, rgba(242, 184, 206, 1) 0%, rgba(255, 214, 17
       border-radius: 15px;
     }
     }
+    @media (max-width:576.98px) and (orientation: portrait){}
+    
   </style>
 </head>
 

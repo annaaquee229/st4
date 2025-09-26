@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-container</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    .section{
+      padding: 30px; 
+       }
+    .section-title{      background-color: #ccc;
+      font-size: 1.5em; font-weight: 700;
+    }
+    .section-content > div{
+    
+      background-color: #f6e;
+    }
+    .section-content >div{
+      display: flex;
+    }
+    .section-content .item{
+      /* width: 100px; min-height: 100px; */
+       /*flex layout 할때는 크기 고정 x (min,*/
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+    .flex-container1{
+      flex-direction: row;
+      
+    }
+    .flex-container1 .item{
+      flex-grow: 1 ;
+      /* width: 200px; */
+      /* flex-glow:1; width:100px; -> item 100px 아닌 container크기에 맞춰 아이템이 다 포함될 수 있을 만큼 늘어남
+      flex-glow가 1일 경우 늘어나지 않고 제 역할을 못함
+     */
+    }
+  </style>
+</head>
+<body>
+  <style>
+.flex-container1{
+  flex-direction: row; /**/
+}
+
+  </style>
+  <!-- .section>.section-title+.section-content -->
+  <div class="section">
+    <div class="section-title">1. flex-glow:0;</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>      
+      
+      
+      </div>
+    </div>
+  </div>
+
+
+<!-- flex-direction -->
+ <!-- .flex-container가 flex-direction:row;
+  주축은 왼->오 수평방향- -->
+  <style>
+    .flex-container2 .item{
+      flex-grow: 0; /*기본값 item 크기 자동으로 늘어나지 말아라*/
+      width: 150px;
+      flex-shrink: 0;
+    }
+    .flex-container3 .item{
+      /* item에 주축의 방향의 제한을 안함 */
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  </style>
+  <!-- flex item이 flex container크기에 맞게 늘어나고 줄어들어라  -->
+  <div class="section">
+    <div class="section-title">2. flex-shrink item 주축크기의 수축</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <div class="section">
+    <div class="section-title">3. flex-glow:1; flex-shrink:1; </div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+  <!--flex-item의 크기지정 flex-basis -->
+  <style>
+    /*flex-direction:row; 주축이 수평방향 width*/
+    .flex-container4 .item{
+    flex-grow:0;
+    flex-shrink:0 ; 
+    flex-basis:200px;
+    width:100px;
+  }
+  </style>
+  <div class="section">
+    <div class="section-title">4. flex 아이템의 기본 주축크기 지정 flex-baisis </div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container4">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-wrap</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    .section{
+      padding: 30px; 
+       }
+    .section-title{      background-color: #ccc;
+      font-size: 1.5em; font-weight: 700;
+    }
+    .section-content > div{
+     margin-top: 30px ;
+      background-color: #f6e;
+    }
+    .section-content >div{
+      display: flex;
+    }
+    .section-content .item{
+      /* width: 100px; min-height: 100px; */
+       /*flex layout 할때는 크기 고정 x (min,*/
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+    .flex-container1{
+      flex-direction: row;
+      
+    }
+    .flex-container1 .item{
+      flex-grow: 1 ;
+      /* width: 200px; */
+      /* flex-glow:1; width:100px; -> item 100px 아닌 container크기에 맞춰 아이템이 다 포함될 수 있을 만큼 늘어남
+      flex-glow가 1일 경우 늘어나지 않고 제 역할을 못함
+     */
+    }
+  </style>
+</head>
+<body>
+  <style>
+.flex-container1{
+  padding: 20px 0;
+  width: 600px;
+  display: flex; /*layout 선언*/
+  flex-direction: row; /*item배치방향*/
+  justify-content: flex-start; /*(기본값)주축 방향 정렬 */
+}
+.flex-container1 .item{
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+}
+
+  </style>
+  <!-- .section>.section-title+.section-content -->
+  <div class="section">
+    <div class="section-title">1. flex-wrap:nowrap; 아이템의 총합이 .container보다 커도 줄바꿈 생기지 않음</div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container1">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>      
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>      
+      
+      
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .flex-container2{
+      width: 600px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 200px;
+    }
+    .flex-container2 .item{
+      /* flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto; */
+      flex:none;
+      width:150px;
+      flex-wrap: wrap;
+
+    }
+  </style>
+  <!-- flex item이 flex container크기에 맞게 늘어나고 줄어들어라  -->
+  <div class="section">
+    <div class="section-title">2. flex-wrap:wrap;아이템의 총합이 .container보다 크면 줄바꿈 </div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container2">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .flex-container3{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: start;
+    }
+    .flex-container3 .item{
+      /* flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto; */
+      flex: none;
+      width: calc(25% - 7.5%);
+   
+    }
+  </style>
+  <div class="section">
+    <div class="section-title">3. flex-wrap:wrap; 4단 레이아웃 </div>
+    <div class="section-content">
+      <!-- .flex-container>.item*4{item$} -->
+      <div class="flex-container3">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -12,7 +12,7 @@
         /* 모양 */
         .container{
             /*해당 섹션의 제일 상위 요소는 배경색 */
-          background-color: #efefef;
+  
         }
         .card-list{
     
@@ -36,10 +36,19 @@
         }
         .card-item .overlay{
         
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
+           position: static;
+            left:0; bottom:0; 
+            width: 100%;
+            height: auto;
+            min-height: auto; 
+            background-color: transparent;
+
+            transform: translateY(-100%);
+           transition: all 0.2s;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           
         }
         /* flex */
@@ -54,7 +63,9 @@
             .card-wrap{
             /* width:25%; (20 * (3-1)) / 4 */
             width: calc(25% - 15px);
-            background-color: #f6c;}
+           background: #000000;
+background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);}
+            
          /* media query */
          /* pc */
          @media(max-width:1535.98px){
@@ -80,44 +91,36 @@
                 
             }
                /* 오버레이가 그림과 동일한 크기 */
-       .card-item .overlay{
-
-
-            background-color: rgba(0,0,255,0.5);
-            color:#2d2d2d;
-        }
+   
       .card-item .overlay > p{
         padding:0.2em 0.5em;
       }
       
+/* ***********************
+중요 스타일
 
+1. 이미지위 설명이 겹쳐
+2. 글자는 이밎의 아래 왼쪽에 위치
+3. 글자는 흰색
 
-        /* 오버레이 아이템 정렬 수직 가운 수평 가운데 */
+***************************/
+
      
         .card-item .overlay{
-          /* 위치 잡기 */
+     
             position: static;
-            left:0; top:0;
-/* 배경색을 투명색으로 */
-background-color: transparent
-;
-            /* 기준 요소 밖으로 배치
-            자기 원래 위치에서 본인의 수평크기만큼 ★★아래★★로 움직
-            */
-
-            transform: translateY(0);
-           transition: all 0.2s;
-
-            /* 기준요소의 너비 높이를 따르게 할때 */
+            left:0; bottom:0; 
             width: 100%;
-            height: 100%;
+            height: auto;
+            min-height: auto; 
+            background-color: transparent;
 
-          /* .overlay 자식요소들의 정렬위해서  */
+            transform: translateY(-100%);
+           transition: all 0.2s;
           display: flex;
           flex-direction: column;
-          justify-content: start;
-          align-items: start;
-          text-align: left; /* overlay요소 안에 후손 inline 들의 정령 */
+          justify-content: center;
+          align-items: center;
         }
         
        /*

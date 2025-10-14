@@ -5,4 +5,12 @@
 참고문서/
 연습/
 
-# mac os
+#vs code
+.vscode/
+.history/
+*.code-worksspace
+
+#Logs
+*.log
+
+cafe24/

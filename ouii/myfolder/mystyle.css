@@ -191,14 +191,6 @@ grid5  :nth-child(5n)
  section관련 스타일 수정
 */
 
-.section{border: 1px solid #f00;}/*테스트삭제*/
-.content-test{
-  border: 1px solid #00f;
-  min-height: 200px;
-  background-color: #ccc;
-}/*테스트삭제*/
-
-
 /* 
 1. section_full_content_center
 section 배경색
@@ -209,13 +201,25 @@ main_title이 content 너비 범위에서 left/center/right 정렬
 .section{
   /*section관련  변수선언 */
   --section-bg:#fea;
+  --section-padding-top-bottom:40px;
+  --seciton-main-banner-padding:16px;
 }
 
 /*         max-width: 1230px; */
 #contents > .section_full_content_center{
   background-color: var(--section-bg);
-  width:100%;
+  width: 100%;
   max-width: none;
+  padding-top: var(--section-padding-top-bottom);
+  padding-bottom: var(--section-padding-top-bottom);
+}
+
+
+#contents > .section_full_content_center .main_3dan_banner .main_banner_txt{
+  margin-top: 0;
+  padding:var(--section-main-banner-padding);
+  background-color: #fff;
+box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
@@ -237,6 +241,8 @@ main_title이 content 너비 범위에서 left/center/right 정렬
   background-color: var(--section-bg);
   width:100%;
   max-width: none;
+  padding-top:var(--section-padding-top-bottom);
+  padding-bottom: var(--section-padding-top-bottom);
 }
 
 @media (min-width: 1024px) {
@@ -247,3 +253,34 @@ main_title이 content 너비 범위에서 left/center/right 정렬
         margin-right: auto;
     }
 }
+
+/* ****************
+visual-swiper
+hero section용 
+*/
+
+.visual-section{
+  --visual-swiper-width:100%;
+}
+@media (min-width: 1024px) {
+  #contents > .visual-section {
+    max-width: none;
+    width: 100%;
+  }
+}
+.visual-section .visual-swiper{
+  width: var(--visual-swiper-width);
+}
+.visual-section .swiper .swiper-slide{}
+.visual-section .swiper-slide picture{
+  display: block;
+}
+.visual-section .swiper-slide picture-source,
+.visual-section .swiper-slide picture img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+
+}
+

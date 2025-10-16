@@ -87,21 +87,24 @@
 
         <!-- 메인 콘텐츠 영역 -->
         <!--@contents-->
-
-        <!-- <body>
-  <--! Slider main container -->
-   <!-- swiper 스크립트 지정할 요소 => myname-->
-    <!-- 스크립트 지정할 클래스명을 동일하게 사용하면 문제가 발생  -->
-<div class="swiper myname">
-  <!-- Additional required wrapper -->
+<section class="section visual-section">
+<section class="swiper visual_swiper">
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=1" alt=""></div>
-    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=2" alt=""></div>
-    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=3" alt=""></div>
-     <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=4" alt=""></div>
-    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=5" alt=""></div>
-    <div class="swiper-slide"><img src="https://picsum.photos/400/300?random=6" alt=""></div>
+    <div class="swiper-slide">
+      <picture>
+        <source srcset="/ouii/myfolder/images/img01.png" media="(min-width:786px)">
+        <img src="/ouii/myfolder/images/img01_m.png" alt="">
+      </picture>
+      <picture>
+        <source srcset="/ouii/myfolder/images/img02.png" media="(min-width:786px)">
+        <img src="/ouii/myfolder/images/img02_m.png" alt="">
+      </picture>
+      <picture>
+        <source srcset="/ouii/myfolder/images/img03.png" media="(min-width:786px)">
+        <img src="/ouii/myfolder/images/img03_m.png" alt="">
+      </picture>
+
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
@@ -113,38 +116,26 @@
   <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div>
 </div>
-<script>
-  // const swiper = new Swiper(★★★'.swiper'★★★, {
-  //  html요소중 .swiper에 Swiper를 연결하겠다
-  const swiper = new Swiper('.myname', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  autoplay: {
-  delay: 2500,
-  disableOnInteraction: false,
-},
+</section>
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    // type : 'fraction',
-    // type : 'progressbar',
-  },
+        <!-- <body>
+  <--! Slider main container -->
+   <!-- swiper 스크립트 지정할 요소 => myname-->
+    <!-- 스크립트 지정할 클래스명을 동일하게 사용하면 문제가 발생  -->
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-</script>
-</body>-->
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+</section>
+
+</body>
 
 
       </div>
@@ -189,6 +180,34 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
+  <script>
+    const visual_swiper = new Swiper('.visual_swiper', {
+      direction: 'horizontal',
+      loop: true,
+      // autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // },
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        // type : 'fraction',
+        // type : 'progressbar',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
 </body>
 
 </html>

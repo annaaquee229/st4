@@ -14,7 +14,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <!-- // PG크로스브라우징필수내용 -->
 
-  <title>ouii-템플릿</title>
+  <title>hero banner</title>
   <link rel="stylesheet" href="">
 
 
@@ -58,10 +58,12 @@
   <!-- theme02 -->
   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- theme03 -->
-  <!--@css(/layout/basic/css/swiper.min.css)-->
-  <!--@js(/layout/basic/js/swiper-bundle.min.js)-->
+  <!-- swiper css/js -->
   <link rel="stylesheet" href="/ouii/layout/basic/css/swiper.min.css">
   <script src="/ouii/layout/basic/js/swiper-bundle.min.js"></script>
+
+  <!--@css(/layout/basic/css/swiper.min.css)-->
+  <!--@js(/layout/basic/js/swiper-bundle.min.js)-->
   <!--@js(/js/module/product/sale_price.js)-->
 
   <!--@js(/layout/basic/js/basic.js)-->
@@ -77,66 +79,50 @@
 <body class="theme01" data-ez-theme="theme01">
   <div id="skipNavigation">
     <p><a href="#category">전체상품목록 바로가기</a></p>
-    <p><a href="#contents">본문 바로가기</a></p>
+    <p><a href="#contents" calss="ub-style">본문 바로가기</a></p>
   </div>
   <div id="wrap">
     <!--@import(/layout/basic/header.html)-->
     <!--@import(/layout/basic/sidebar.html)-->
     <div id="container" data-ez="layout-187eug1-1">
-      <div id="contents">
+      <div id="contents" calss="ub-style"">
 
-        <!-- 메인 콘텐츠 영역 -->
-        <!--@contents-->
-<section class="section visual-section">
-<section class="swiper visual_swiper">
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">
-      <picture>
-        <source srcset="/ouii/myfolder/images/img01.png" media="(min-width:786px)">
-        <img src="/ouii/myfolder/images/img01_m.png" alt="">
-      </picture>
-      <picture>
-        <source srcset="/ouii/myfolder/images/img02.png" media="(min-width:786px)">
-        <img src="/ouii/myfolder/images/img02_m.png" alt="">
-      </picture>
-      <picture>
-        <source srcset="/ouii/myfolder/images/img03.png" media="(min-width:786px)">
-        <img src="/ouii/myfolder/images/img03_m.png" alt="">
-      </picture>
+        <!-- 여기에 콘텐츠 -->
+        <section class="section visual-section section_full ">
+          <div class="swiper visual_swiper ub-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/ouii/myfolder/images/img01_m.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/img01.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/ouii/myfolder/images/img02_m.png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/img02.png" alt="">
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source srcset="/ouii/myfolder/images/img03_m.png".png" media="(max-width:768px)">
+                  <img src="/ouii/myfolder/images/img03.png" alt="">
+                </picture>
+              </div>
+  
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
-</section>
-
-        <!-- <body>
-  <--! Slider main container -->
-   <!-- swiper 스크립트 지정할 요소 => myname-->
-    <!-- 스크립트 지정할 클래스명을 동일하게 사용하면 문제가 발생  -->
-
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
-</section>
-
-</body>
-
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </section>
 
       </div>
     </div>
@@ -180,6 +166,8 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
+
+
   <script>
     const visual_swiper = new Swiper('.visual_swiper', {
       direction: 'horizontal',

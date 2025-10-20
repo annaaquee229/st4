@@ -84,12 +84,15 @@
   <div id="wrap">
     <!--@import(/layout/basic/header.html)-->
     <!--@import(/layout/basic/sidebar.html)-->
+
+    <!-- ub-swiper-controls-bottom 클래스를 추가할때 
+     swiper 스크립트의 pagination의 type:fraction 으로 변경 -->
     <div id="container" data-ez="layout-187eug1-1">
       <div id="contents" calss="ub-style"">
 
         <!-- 여기에 콘텐츠 -->
         <section class="section visual-section section_full ">
-          <div class="swiper visual_swiper ub-swiper">
+          <div class="swiper visual_swiper ub-swiper ub-swiper-controls-bottom">
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide">
@@ -112,15 +115,15 @@
               </div>
   
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+            <div class="ub-swiper-controls">
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <!-- If we need scrollbar -->
+              <div class="swiper-scrollbar"></div>
+            </div>
           </div>
         </section>
 
@@ -172,6 +175,10 @@
     const visual_swiper = new Swiper('.visual_swiper', {
       direction: 'horizontal',
       loop: true,
+      centerdSlides: true,
+      slidesPerView: 'auto',
+      //html에서 transform:scale()을 사용하면 spaceBetween을 사용하지 마시오//
+      // spaceBetween: 30,
       // autoplay: {
       //   delay: 2500,
       //   disableOnInteraction: false,
@@ -180,7 +187,7 @@
       // If we need pagination
       pagination: {
         el: '.swiper-pagination',
-        // type : 'fraction',
+        type : 'fraction',
         // type : 'progressbar',
       },
 

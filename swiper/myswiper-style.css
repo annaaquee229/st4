@@ -37,7 +37,8 @@
 }
 
 /****
-pagination
+swiper pagination
+색상변경 bullet의 모양 변경 변수 선언
 */
 
 .myname.swiper{
@@ -58,6 +59,7 @@ pagination
 
 /*********
 swiper scrollbar
+위치조정 변수 선언
 */
 
 .swiper-scrollbar.swiper-scrollbar-horizontal,
@@ -75,5 +77,6 @@ swiper scrollbar
         border-radius:0 ;}
 
         .myname .swiper-scrollbar-drag{
-          background-color: white;}
+          /* background:rgba(255,255,255,1); */
+          background-color: rgba(0, 0, 0, 1);}
   

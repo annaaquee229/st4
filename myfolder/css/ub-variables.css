@@ -4,6 +4,13 @@
 :root {
   /* 색상 변수  */
   --primary-color:#1f1f1f;
+  --ub-font-base-color:#000;
+  --ub-font-title-color:#000;
+  --ub-font-title-txt02-color:#999;
+  --ub-tab-button-default:#999;
+  --ub-tab-button-active:#000;
+
+
   /* 간격 변수 */
   --space-xs: 8px;
   --space-sm: 10px;

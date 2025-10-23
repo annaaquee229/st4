@@ -15,7 +15,7 @@ margin-bottom:var(--space-xl)}
 }
 .main_title .main_title_txt02{
    font-size:calc(
-    18px + (24 - 13) * ((100vw - 370px) / (1760 - 370)) );
+    13px + (20 - 13) * ((100vw - 370px) / (1760 - 370)) );
   
     line-height: 1;
     color: var(--ub-font-title-txt02-color);
@@ -41,7 +41,7 @@ margin-bottom:var(--space-xl)}
 .main_product_category .main_product_tab li button{
   position: relative;
   font-size: calc(
-    18px + (18 - 13) * ((100vw - 370px) / (1760 - 370)) );;
+    13px + (18 - 13) * ((100vw - 370px) / (1760 - 370)) );;
   
     line-height:1.6;
     color: var(--ub-tab-button-default);}
@@ -84,13 +84,13 @@ main_title main_product_tab 수평으로 배치 */
 }
 .main_title .main_title_txt01{
   font-size:calc(
-    18px + (39 - 18) * ((100vw - 370px) / (1760 - 370)) );
+    18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)) );
 
   
 }
 .main_title .main_title_txt02{
    font-size:calc(
-    18px + (16 - 13) * ((100vw - 370px) / (1760 - 370)) );
+    13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)) );
  
 }
 .section.tab-horizontal .main_product_inner .main_product_tab{

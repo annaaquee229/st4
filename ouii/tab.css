@@ -1,7 +1,48 @@
 .main_product_category{
   margin: 100px auto;
 }
+.main_product_category .main_product_tab{
+  margin-bottom: 0px;
+  display: flex;
+}
+.main_product_category .main_product_tab li{
+    margin: 0 var(--space-xs);
+    padding: 0 var(--space-xs);
+}
+.main_product_category .main_product_tab li .button{
+  position: relative;
+  font-size: calc(
+    13px + (18 - 13) * ((100vw - 370px) / (1760 - 370)) );;
+  
+    line-height:1.6;
+    color: var(--ub-tab-button-default);}
+
+
+
+.main_product_category .main_product_tab li .button::after{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--ub-tab-button-active);
+  transform: scale(0);
+  transform-origin: right center ;
+  transition:transform 0.3s ease-in;
+
+}
+
+.main_product_category .main_product_tab li .button.active::after{transform: scale(100%);
+transition: transform 0.2s  ease-in;
+transform-origin: left center;}
+/* 탭버튼 중앙정렬 .section.tab-center
+ */
+  
 .main_product_inner{}
+.section.tab-center .main_product_inner{
+  margin-bottom: var(--space-md);
+}
 .main_title{
   text-align: center;
 margin-bottom:var(--space-xl)}
@@ -21,16 +62,25 @@ margin-bottom:var(--space-xl)}
     color: var(--ub-font-title-txt02-color);
     margin-top: 15px;
 }
-
-/* 탭메뉴 */
-.main_product_category .main_product_tab{
+.section.tab-vertical .main_product_tab li button.active::after{
+  content:"";
+  position: absolute;
+  bottom:0px;
+  left:0;
   width: 100%;
-  border: 1px solid #f00; /*삭제*/
+  height: 2px;
+  background-color: var(--ub-tab-button-active);
+}
+/* 탭메뉴 */
+
+.section.tab-center .main_product_tab{
+  width: 100%;
+
   display: flex;
   justify-content: center;
 }
 
-.main_product_category .main_product_tab li{
+.section.tab-center .main_product_tab li{
   margin: 0 var(--space-xs);
     padding: 0 var(--space-xs);
 
@@ -38,7 +88,7 @@ margin-bottom:var(--space-xl)}
     background-color: #efefef; */
 } 
 
-.main_product_category .main_product_tab li button{
+.section.tab-center .main_product_tab li button{
   position: relative;
   font-size: calc(
     13px + (18 - 13) * ((100vw - 370px) / (1760 - 370)) );;
@@ -46,19 +96,14 @@ margin-bottom:var(--space-xl)}
     line-height:1.6;
     color: var(--ub-tab-button-default);}
 
-  
-
-
-.main_product_category .main_product_tab li button.active{
-  color:var(--ub-tab-button-active);
-  
+.section.tab-center .main_product_tab li .button.active{
+  color:var(--ub-tab-button-active);  
 }
 
-
-.main_product_category .main_product_tab li button.active::after{
+.section.tab-center .main_product_tab li .button.active::after{
   content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: -6px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -74,8 +119,7 @@ main_title main_product_tab 수평으로 배치 */
   display: flex;
   justify-content: space-between;
   align-items: end;
-  
-
+  margin-bottom: var(--space-md);
 }
 .section.tab-horizontal .main_title{
   text-align: left;
@@ -136,23 +180,42 @@ font-weight: 400;
   flex-direction: column;
   justify-content: start;
 }
- .section.tab-vertical .content_list{
-  width: 82%;
- 
- }
+
   .section.tab-vertical .main_product_tab >li {
     margin: 0;
     padding:var(--space-sm) var(--space-md);
     margin-bottom: var(--space-md);
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
   }
   /* li에 background를 넣는다면 content:none
   /* li에 background를 넣지 않는다면 content:none을 코멘트 처리
    */
 
-.section.tab-vertical .main_product_tab >li button::after,
-.section.tab-vertical .main_product_tab >li button.active::after{ content: none;
+   .section.tab-vertical .main_product_tab li button.active{
+  color:var(--ub-tab-button-active);
 }
+
+.section.tab-vertical .main_product_tab li button.active::after{
+  content:"";
+  position: absolute;
+  bottom:0px;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--ub-tab-button-active);
+}
+
+
+.section.tab-vertical .main_product_tab li button::after,
+.section.tab-vertical .main_product_tab li button.active::after{
+  
+  /* content: none; */
+}
+
+.section.tab-vertical .content_list{
+  width: 82%;
+ }
+
 /* 탭콘텐츠
 content_list
  */
@@ -163,3 +226,98 @@ content_list
   min-height: 400px;
   border: 1px solid #aaa;
  }
+
+ .section.main_product_category .content_list .tabcontent{
+  display: none;
+}
+.section.main_product_category .content_list .tabcontent.active{
+  display: block;
+}
+
+/* 탭메뉴 미디어쿼리
+ */
+
+ /*  .section.tab-center .main_product_inner */
+ @media (max-width:1024px){
+  .section.tab-center .main_product_inner{
+ margin-bottom: var(--space-sm);}
+.section.tab-center .main_title{
+ margin-bottom: var(--space-lg);}
+ .section.tab-center .main_product_tab{
+  /* justify-content: start; */
+  overflow-x:auto;
+ }
+
+ }/*  @media (max-width:1024px) {*/
+
+ @media(max-width:767px){
+   .section.tab-center .main_product_tab{
+
+  justify-content: start;}
+  /* overflow-x:auto; */
+
+ } /*  @media (max-width:1024px) {*/
+ 
+ /*  .section.tab-horizontal){ */
+ @media(max-width:1024){
+  .section.tab-horizontal .main_product_inner{
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .section.tab-horizontal .main_title{
+    margin-bottom: var(--space-lg);
+  }
+  .section.tab-horizontal .main_product_tab{
+    justify-content: start;
+    margin-left: 0;
+    overflow-x: auto;
+    width:100%;
+  }
+  .section.tab-horizontal .main_product_tab li:first-child{
+    margin-left: 0;
+    padding-left: 0;
+  }
+ }
+ @media (max-width:767px){
+.section.tab-horizontal .main_title{
+  margin-bottom: var(--space-md);
+ }
+
+}/*@media (max-width:767px){*/
+
+ /* 
+ .section.tab-vertical
+  */
+  @media (max-width:1024px){
+    .section.tab-vertical{
+      flex-direction: column;
+    }
+.section.tab-vertical .main_product_tab{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.section.tab-vertical .main_product_inner{
+  /* flex: 0 1 auto; */
+  width:auto;
+   margin-right: 0%;
+  
+ }
+ .section.tab-vertical .main_product_tab {
+  flex-direction: row;
+  overflow-x: auto;
+ }
+ .section.tab-vertical .main_product_tab >li{
+  margin-bottom: 0;}
+  .section.tab-vertical .main_product_tab >li:first-child{
+    margin-left:0;
+    padding-left: 0;
+  } 
+   @media (max-width:767px){
+.section.tab-vertical .main_title{
+  margin-bottom: var(--space-md);
+ }
+    }
+    }  /* @media (max-width:1024px)*/
+

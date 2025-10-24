@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
   <link rel="stylesheet" href="/myfolder/css/ub-variables.css">
   <link rel="stylesheet" href="/myfolder/css/ub-variables.css">
+  <link rel="stylesheet" href="/ouii/layout/basic/css/main.css">
   <!-- ------------------- -->
 
   <!--@css(/layout/basic/css/common.css)--><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
@@ -77,7 +78,7 @@
 
 </head>
 
-<body class="theme01" data-ez-theme="theme01">
+<bod class="theme01" data-ez-theme="theme01">
   <div id="skipNavigation">
     <p><a href="#category">전체상품목록 바로가기</a></p>
     <p><a href="#contents">본문 바로가기</a></p>
@@ -92,6 +93,7 @@
 
        <!-- section main_product_category tab-horizontal -->
         <!-- 여기에 테스트 콘텐츠 복사 -->
+        
         <section class="section main_product_category tab-vertical" data-ez-module="product-list-category/2" data-ez-layout="grid4"
           data-ez="contents-19e2vhm-1">
 
@@ -109,6 +111,7 @@
                   data-name="목걸이">목걸이</button></li>
               <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
                   data-name="반지">반지</button></li>
+            
             </ul><!-- //main_product_tab -->
           </div><!-- //main_product_inner -->
 
@@ -162,6 +165,20 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
-</body>
+
+  <!-- 탭메뉴 태스트를 위한 스크립트 복사 -->
+   
+  <script>jQuery(document).ready(function () {jQuery(".main_product_tab li").bind("click", function () {
+		jQuery(this).parent().find('li button').removeClass("active");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent').removeClass("active");
+		jQuery('button', this).addClass("active");
+		var activeTab = jQuery('button', this).attr("data-id");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent' + '#' + activeTab).addClass("active");
+	});
+	jQuery('.main_product_category .main_product_inner .main_product_tab li button, .content_list .tabcontent').removeClass('active'); // 나머지 탭 숨김
+	jQuery('.main_product_category .main_product_inner .main_product_tab li:first-child button, .content_list .tabcontent:first-child').addClass('active');});</script>
+
+
+</bod>
 
 </html>

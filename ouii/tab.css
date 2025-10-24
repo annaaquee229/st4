@@ -98,6 +98,61 @@ main_title main_product_tab 수평으로 배치 */
   width: auto;
 }
 
+/* 
+수직 탭버튼 .section.tab-vertical
+ */
+
+ .section.tab-vertical{
+  display: flex;
+  /* flex-direction: row;
+  justify-content: start; */
+ }
+
+ .section.tab-vertical .main_product_inner{
+  /* flex: 0 1 auto; */
+  width:16%;
+   margin-right: 2%;
+  
+ }
+ .section.tab-vertical .main_title{
+  text-align: left;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  margin-bottom: var(--space-lg);
+}
+.section.tab-vertical .main_title .main_title_txt01{
+  font-size:calc(
+    18px + (24 - 18) * ((100vw - 370px) / (1760 - 370)) );
+font-weight: 400;
+  
+}
+.section.tab-vertical .main_title .main_title_txt02{
+   font-size:calc(
+    13px + (16 - 13) * ((100vw - 370px) / (1760 - 370)) );
+ 
+}
+.section.tab-vertical .main_product_tab{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+ .section.tab-vertical .content_list{
+  width: 82%;
+ 
+ }
+  .section.tab-vertical .main_product_tab >li {
+    margin: 0;
+    padding:var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+    background-color: #fefefe;
+  }
+  /* li에 background를 넣는다면 content:none
+  /* li에 background를 넣지 않는다면 content:none을 코멘트 처리
+   */
+
+.section.tab-vertical .main_product_tab >li button::after,
+.section.tab-vertical .main_product_tab >li button.active::after{ content: none;
+}
 /* 탭콘텐츠
 content_list
  */

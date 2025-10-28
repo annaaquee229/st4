@@ -34,7 +34,18 @@
 .bt_top .info_left{ }
 .bt_top .info_left .bt_logo{
   margin-bottom: 30px;
+  overflow: hidden;
 }
+.bt_top .info_left .bt_logo .bt_logo-image{
+  text-indent:  -200px;
+}
+
+.bt_top .info_left .bt_logo.bt_logo-text a{
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+
 .bt_top .info_left .bt_logo a{
   display: flex;
   justify-content: start;
@@ -45,11 +56,199 @@
 .bt_top .info_left .bt_logo a img{
    width: clamp(150px,10vw,200px);
 }
-
+.bt_top .info_left .bt_logo.bt_logo-text img{
+display: none;
+}
+.bt_top .info_left .bt_logo .bt_logo-image img{
+  /* 로고를 회색톤으로 변경할때*/
+  filter: grayscale(60%);
+  
+}
+/*기본 정보 */
 .bt_top .info_left ul{}
+.bt_top .info_left ul .bt_company{
+  margin: 0;
+  font-size:14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #333;
+  line-height: 1.7;
+  position: relative;
+}
+.bt_top .info_left ul .bt_company span[da-ez-role="title"]{}
+#footer .bt_company .table_fold{}
+.bt_top .info_left ul .bt_company .bt_info_list{}
 .bt_top .bt_top_fold{}
 
 
 .bt_middle{width: 100%;}
 
 .bt_bottom{width: 100%;}
+
+/* 타블렛 모바일 일때 아코디언 css */
+@media (max-width:1024px) {
+  .bt_top ul > li .icon[class*="icoPlus"] {
+        display: block;
+        width: 12px;
+        height: 22px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        font-size: 0px;
+        color: #333;
+        position: relative;
+    }
+
+    .bt_top ul > li .icon[class*="icoPlus"]:before {
+        content: '';
+        position: absolute;
+        left: 1px;
+        top: 50%;
+        width: 11px;
+        height: 1px;
+        background: #333;
+    }
+
+    .bt_top ul > li .icon[class*="icoPlus"]:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1px;
+        height: 11px;
+        margin: -5px 0 0 0;
+        background: #333;
+    }
+
+    .bt_top ul > li .icon[class*="icoPlus"].open:after {
+        display: none;
+    }
+}
+
+/* 이거 복사 부분 확인 하기  <<  767에서 1024까지 */
+@media all and (max-width: 767px) {
+    .RTB {
+        display:none !important;
+    }
+
+    .RMB {
+        display: block !important;
+    }
+
+    .RMI {
+        display: inline-block !important;
+    }
+
+    .display_mobile_only {
+        display: block !important;
+    }
+
+    .display_pc_only {
+        display: none !important;
+    }
+
+    .main_image_text_gallery_more .main_image_text_gallery_more_btn,.more .btnMore {
+        padding: 13px 35px;
+        font-size: 13px;
+    }
+
+    .more .btnMore > div {
+        font-size: 12px;
+    }
+
+    #header.fixed .inner .xans-layout-searchheader,.xans-layout-searchheader {
+        height: auto;
+        padding-bottom: 36px;
+    }
+
+    .xans-layout-searchheader .top_search_title {
+        margin-top: 36px;
+    }
+
+    .xans-layout-searchheader fieldset .top_search_box {
+        height: 37px;
+    }
+
+    .xans-layout-searchheader fieldset .top_search_box #keyword {
+        height: 37px;
+        font-size: 13px;
+        padding-left: 10px;
+    }
+
+    .xans-layout-searchheader fieldset .top_search_box #keyword::placeholder {
+        font-size: 13px;
+    }
+
+    .xans-layout-searchheader fieldset .top_search_box .btnSearch {
+        height: 17px;
+    }
+
+    .xans-layout-searchheader fieldset .top_search_box .btnSearch svg {
+        height: 100%;
+    }
+
+    .xans-layout-searchheader .xans-search-hotkeyword .hot_keyword {
+        margin-bottom: 36px;
+    }
+
+    .xans-layout-searchheader .btnClose {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width:1024px) {
+    .RMB {
+        display:none !important;
+    }
+
+    .RMI {
+        display: none !important;
+    }
+
+    .RTB {
+        display: block !important;
+    }
+}
+
+@media all and (min-width: 1025px) {
+    .RMB {
+        display:none !important;
+    }
+
+    .RMI {
+        display: none !important;
+    }
+
+    .RTB {
+        display: none !important;
+    }
+
+    .RTMI {
+        display: none !important;
+    }
+
+    .RTMB {
+        display: none !important;
+    }
+        .bt_top ul > li .bt_dummy {
+        position: absolute;
+        width: 100%;
+        height: 24px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+
+    .bt_top ul li.bt_company {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+}

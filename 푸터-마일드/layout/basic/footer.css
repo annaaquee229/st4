@@ -3,7 +3,7 @@
 #footer{
   width:100%;
   border-top:1px solid #e5e5e5;
-  background-color: #ccc; /*테스트후 변경*/
+  /* background-color: #ccc; 테스트후 변경 */
 }
 #footer .inner{
   width:var(--section-width, 92%);

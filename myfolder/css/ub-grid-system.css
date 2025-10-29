@@ -1,5 +1,4 @@
 
-
 /* ========================================
    1 기본 컨테이너 & 그리드 시스템
 ======================================== */
@@ -33,6 +32,8 @@
 [class*="col-"] {
     padding-left: var(--dan-space);
   padding-right: var(--dan-space);
+    /* padding-left: 0;
+  padding-right: 0; */
   box-sizing: border-box;
   flex: 0 0 auto;
 }
@@ -229,20 +230,25 @@
 /* ========================================
    10. 반응형 (모바일 우선)
 ======================================== */
+
 /* 대형 데스크톱 (1300px~) */
 @media (max-width: 1300px) {
   .col-xl-1 { width: 8.33%; }
   .col-xl-2 { width: 16.66%; }
   .col-xl-3 { width: 25%; }
   .col-xl-4 { width: 33.33%; }
+  .col-xl-5 { width: 41.66%; }
   .col-xl-6 { width: 50%; }
+  .col-xl-7 { width: 58.33%; }
   .col-xl-8 { width: 66.66%; }
+  .col-xl-9 { width: 75%; }
+  .col-xl-10 { width: 83.33%; }
+  .col-xl-11 { width: 91.66%; }
   .col-xl-12 { width: 100%; }
   
   .flex-xl-row { flex-direction: row; }
   .justify-xl-between { justify-content: space-between; }
 }
-
 /* 데스크톱 (1024px~) */
 @media (max-width: 1024px) {
   .col-lg-1 { width: 8.33%; }
@@ -294,9 +300,8 @@
   
   .gap-md-lg { gap: var(--space-lg); }
 }
-
-/* 작은 태블릿 (440px~) */
-@media (max-width: 440px) {
+/* 작은 태블릿 (480px~) */
+@media (max-width: 480px) {
   .col-sm-6 { width: 50%; }
   .col-sm-12 { width: 100%; }
   

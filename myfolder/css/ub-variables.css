@@ -2,14 +2,14 @@
    1. CSS 변수 정의
 ======================================== */
 :root {
-  /* 색상 변수  */
+  /* 색상 */
   --primary-color:#1f1f1f;
+
   --ub-font-base-color:#000;
   --ub-font-title-color:#000;
   --ub-font-title-txt02-color:#999;
   --ub-tab-button-default:#999;
   --ub-tab-button-active:#000;
-
 
   /* 간격 변수 */
   --space-xs: 8px;
@@ -22,7 +22,7 @@
   /* 레이아웃 변수 */
   --max-width: 1230px;
   --section-width: 92%;
-  --dan-space: var(--space-md);
+  --dan-space:15px;
   
   /* 반응형 breakpoint */
   --breakpoint-sm: 480px;
@@ -37,6 +37,4 @@
   --section-main-banner-padding:16px;
 }
 
-
-
-
+  

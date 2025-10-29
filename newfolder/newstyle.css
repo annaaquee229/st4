@@ -215,7 +215,7 @@ visual-swiper (비주얼/메인 슬라이더)
 }
 
 /* ub-swiper (공통 스와이퍼 스타일) */
-/* **1. 네비게이션 화살표 기본 스타일 (위치 미지정)** */
+/* **1. 네비게이션 화살표 기본 스타일 ** */
 .ub-swiper .swiper-button-prev,
 .ub-swiper .swiper-button-next{
     width:24px; height: 24px; /* 크기를 통일 */
@@ -254,8 +254,6 @@ visual-swiper (비주얼/메인 슬라이더)
 /*******
 swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **삭제 및 정리 대상**
 */
-/* 고객님 요구사항과 충돌하므로 관련 스타일은 전부 제거합니다. (생략) */
-
 
 /*******
 **swiper controls가 슬라이드 위에 오버레이 표시 (.ub-swiper-controls-overlay)**
@@ -293,7 +291,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
    align-items: center;
    gap: 0.5rem; /* 요소 간 간격 */
    box-sizing: border-box;
-   padding: 0 40px; 
+   padding: 0 100px;  /*좌측 여백*/
   }
 
 
@@ -310,7 +308,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     background: rgba(255, 255, 255, 0.4); 
 }
 .ub-swiper.ub-swiper-controls-overlay .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background: var(--primary-color, #000); 
+    background: var(--primary-color, #fff); 
 }
 .ub-swiper.ub-swiper-controls-overlay .swiper-button-prev,
 .ub-swiper.ub-swiper-controls-overlay .swiper-button-next{

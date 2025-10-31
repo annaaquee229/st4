@@ -200,6 +200,7 @@ visual-swiper (비주얼/메인 슬라이더)
         width: 100%;
     }
 }
+
 .visual-section .visual_swiper{
   width: var(--visual-swiper-width);
 }
@@ -229,10 +230,12 @@ visual-swiper (비주얼/메인 슬라이더)
     background-position: center;
     left: auto; /* 중복 제거 */
     right: auto; /* 중복 제거 */
+    filter: invert(100%);
 }
 .ub-swiper  .swiper-button-next {
     background-image: url(/newfolder/images/arrow_forward_light.svg);
     background-position: center;
+    filter: invert(100%);
     left: auto; /* 중복 제거 */
     right: auto; /* 중복 제거 */
 }
@@ -261,6 +264,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
  */
 .ub-swiper.ub-swiper-controls-overlay {
     position: relative; 
+    
 }
 
 /* 1. 네비게이션 화살표 버튼 재정의 */
@@ -307,8 +311,25 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     height: 4px;
     background: rgba(255, 255, 255, 0.4); 
 }
-.ub-swiper.ub-swiper-controls-overlay .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background: var(--primary-color, #fff); 
+/* progressbar 스타일링 */
+.ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar {
+  width: 100%;
+  max-width: 85%;
+  height: 2px;
+  background: rgba(0,0,0,0.1); /* 바의 뒷배경 (옅은 회색) */
+}
+.ub-swiper.ub-swiper-controls-overlay .swiper-slide{
+  width:100% !important;
+  transform: scale(1);
+ 
+}
+.ub-swiper.ub-swiper-controls-overlay .swiper-slide-active{
+  transform: scale(1);
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  /* ▼ 이 부분이 현재 슬라이드 진행률을 나타냅니다. ▼ */
+  background: var(--primary-color, #000); /* 검은색 또는 변수 사용 */
+  /* background: #000; */ /* 만약 var(--primary-color)가 정의되지 않았다면 #000을 직접 사용하세요 */
 }
 .ub-swiper.ub-swiper-controls-overlay .swiper-button-prev,
 .ub-swiper.ub-swiper-controls-overlay .swiper-button-next{
@@ -319,15 +340,13 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     top: auto;
     bottom: auto;
     z-index: 10;
-    
-    /* **!! 이 부분이 중요합니다. 이미지 경로와 사이즈를 명시적으로 다시 적용 !!** */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+   
+  
 }
 /* `<` 화살표 (순서 2) */
 .ub-swiper.ub-swiper-controls-overlay .swiper-button-prev{
     order: 2;
+   
 }
 
 /* Custom Fraction 스타일링 (숫자, 순서 3) */
@@ -341,6 +360,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
 /* `>` 화살표 (순서 4) */
 .ub-swiper.ub-swiper-controls-overlay .swiper-button-next{
     order: 4;
+    color: #fff;
 }
 
 /* 자동 재생 토글 버튼 스타일링 (순서 5) */
@@ -359,9 +379,11 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
   
     width: 20px; height: 20px;
     background-image: url(/newfolder/images/play_arrow.png); 
+    filter: invert(100%);
 }
 .ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-pause{
     background-image: url(/newfolder/images/pause.png); 
+    filter: invert(100%);
 }
 .ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-play.hidden,
 .ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-pause.hidden{

@@ -1,12 +1,12 @@
 /**
- * 💡 푸터 아코디언 UI 스크립트 (최종 안정화 버전)
+ * 💡 푸터 아코디언 UI 스크립트 (BREAKPOINT 1024px 포함 작동 버전)
  */
 (function ($) {
     // ⬇️ [필수 설정] 브레이크포인트 변수 설정
-    // 1024px 미만(1023px 이하)에서 아코디언이 작동합니다.
+    // 1024px '이하'에서 아코디언이 작동합니다.
     const BREAKPOINT_WIDTH = 1024;
 
-    // 1. 콘텐츠 래퍼 구조화 함수
+    // 1. 콘텐츠 래퍼 구조화 함수 (변경 없음)
     const wrapContents = function ($item) {
         const $title = $item.children('[data-ez-role="title"]').first();
         const $contentElements = $title.nextAll();
@@ -21,8 +21,8 @@
     const toggleAccordion = function (event) {
         event.preventDefault(); 
         
-        // PC 환경에서는 아코디언 기능 작동을 즉시 차단 (1024px 이상)
-        if ($(window).width() >= BREAKPOINT_WIDTH) {
+        // ⭐ [수정] 1024px '초과'일 때 기능 작동 차단
+        if ($(window).width() > BREAKPOINT_WIDTH) { 
             return;
         }
 
@@ -73,12 +73,13 @@
             wrapContents($(this));
         });
 
-        if (window_width < BREAKPOINT_WIDTH) {
-            // 📱 모바일 환경 (1024px 미만)
+        // ⭐ [수정] 1024px '이하'에서 모바일 환경 로직 실행
+        if (window_width <= BREAKPOINT_WIDTH) { 
+            // 📱 모바일 환경 (1024px 이하)
             $items.each(function() {
                 const $item = $(this);
                 const $title = $item.children('[data-ez-role="title"]').first();
-                const $content = $item.children('.accordion-content-wrapper');
+                // const $content = $item.children('.accordion-content-wrapper'); // 사용하지 않음
                 
                 // 이벤트 바인딩
                 $title.off('click.accordion-handler').on('click.accordion-handler', toggleAccordion);
@@ -87,7 +88,7 @@
                 $item.removeClass('active');
             });
         } else {
-            // 🖥️ PC 환경 (1024px 이상)
+            // 🖥️ PC 환경 (1024px 초과)
             $items.each(function() {
                 const $item = $(this);
                 const $title = $item.children('[data-ez-role="title"]').first();

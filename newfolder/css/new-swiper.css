@@ -1,0 +1,281 @@
+       /*
+         * CSS: Vertical Slider Styles (Split + Responsive)
+         * 수정 요청 반영: 모바일에서 이미지가 하단으로 내려가는 현상 수정 (수직 중앙 정렬 조정)
+         */
+
+        body {
+            /* 배경색: 따뜻한 베이지/미색 */
+            background-color: #f383a7;
+            /* 글꼴: 세리프(명조체) 계열 */
+            font-family: 'Pretendard';
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* JS가 스크롤을 제어하므로 숨김 */
+        }
+
+        /* 뷰포트 전체 크기 설정 */
+        .ub-wrapper,
+        .wrapper,
+        .slider-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0;
+            background-color: #f383a7;
+            position: relative;
+        }
+
+        /* ==================================== */
+        /* 1. 고정 헤더 영역 (데스크톱) */
+        /* ==================================== */
+        .fixed-header-box {
+            /* 뷰포트에 고정되어 스크롤에 영향을 받지 않음 */
+            position: fixed;
+            top: 60px;
+            left: 10vw;
+            padding: 10px 0;
+            z-index: 9999;
+            color: #2c2c2c;
+            width: 30vw; 
+            display: block;
+            text-align: left; /* 데스크톱에서 좌측 정렬 */
+        }
+
+        .fixed-header-box .header-title {
+            font-family: 'Pretendard';
+            font-weight: 500;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            display: block;
+            width: 100%;
+        }
+
+        .fixed-header-box .header-subtitle {
+            font-family: 'Pretendard', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #555555;
+            line-height: 1.4;
+            display: block;
+            width: 100%;
+        }
+
+        /* ==================================== */
+        /* 2. 슬라이더 영역 (데스크톱: 2단 분리 레이아웃) */
+        /* ==================================== */
+
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .list-item {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-color: #f383a7;
+            color: #2c2c2c;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- 아이템 그룹 (데스크톱에서는 필요 없지만, 모바일 중앙 정렬을 위해 추가) --- */
+        .item-group {
+            display: contents; /* 데스크톱에서는 Flex Flow에 영향 없이 컨텐츠를 펼침 */
+        }
+
+        /* --- 이미지 (Visual) 영역: 화면 중앙 배치 --- */
+        .item-visual {
+            /* 이미지가 화면 중앙에 오도록 절대 위치 지정 */
+            position: absolute;
+            left: 50%; 
+            top: 50%;
+            transform: translate(-50%, -50%); 
+            z-index: 1; 
+        }
+
+        .product-image {
+            width: 700px; 
+            height: 700px;
+            object-fit: contain;
+            background-color: transparent; 
+            border-radius: 0; 
+            box-shadow: none; 
+            display: block;
+        }
+
+        /* --- 텍스트 (Content) 영역: 화면 오른쪽 배치 (데스크톱 2단) --- */
+        .item-content {
+            position: absolute;
+            top: 50%;
+            right: 10vw; /* 오른쪽 끝에서 10vw만큼 마진 */
+            transform: translateY(-50%);
+            width: 25vw; /* 텍스트 너비 조정 */
+            max-width: 350px;
+            z-index: 2; 
+            text-align: left; /* 텍스트 좌측 정렬 */
+        }
+
+        .item-content .main-title {
+            font-family: 'Pretendard', serif;
+            font-size: 2.5rem; 
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: #2c2c2c;
+        }
+
+        .item-content .sub-text {
+            font-family: 'Pretendard', sans-serif;
+            font-size: 0.9rem; 
+            line-height: 1.5;
+            color: #555555;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* 가격 스타일
+        .item-content .price-box {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        } */
+
+        /* .item-content .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-right: 0.5rem;
+        } */
+
+        /* .item-content .discount-badge {
+            display: inline-block;
+            background-color: #d8c2b7; 
+            color: #2c2c2c;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            font-weight: 700;
+        } */
+
+
+        /* ==================================== */
+        /* 3. 반응형 디자인 (모바일 환경 768px 이하) */
+        /* ==================================== */
+
+        /* 데스크톱 크기 조정 */
+        @media (max-width: 1400px) {
+            .product-image {
+                width: 550px; 
+                height: 550px;
+            }
+
+            .item-content {
+                right: 5vw; 
+                width: 30vw; 
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .product-image {
+                width: 400px; 
+                height: 400px;
+            }
+
+            .item-content {
+                right: 3vw; 
+                width: 35vw;
+                max-width: 250px;
+            }
+            
+            .fixed-header-box {
+                left: 5vw; 
+            }
+        }
+
+
+        /* 모바일 환경 (768px 이하) - 중앙 정렬 재조정 */
+        @media (max-width: 768px) {
+            /* 1. 고정 헤더: 좌측 정렬 유지 */
+            .fixed-header-box {
+                position: absolute; 
+                top: 20px;
+                left: 5vw; 
+                transform: none; 
+                width: 90vw;
+                text-align: left; 
+                z-index: 100;
+                /* 모바일에서 헤더가 다른 요소 위에 떠다니게 함 */
+            }
+            
+            /* 슬라이드 항목을 Flex Column으로 변경 */
+            .list-item {
+                flex-direction: column; 
+                justify-content: center; /* 수직 중앙 정렬을 기본으로 설정 */
+                align-items: center;
+                /* padding-top: 100px; 제거 -> 요소가 화면 중앙으로 올라옴 */
+            }
+
+            /* --- 아이템 그룹: 전체 컨텐츠를 감싸고 헤더만큼 위로 끌어올림 --- */
+            .item-group {
+                display: flex; /* Flex Box 적용 */
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                /* 헤더의 높이 (약 70px + 여백)만큼 위로 끌어올려 시각적 중앙을 맞춤 */
+                transform: translateY(-50px); 
+                width: 100%; /* 너비 확보 */
+            }
+            
+            /* 2. 이미지 영역: 문서 흐름에 따름 (Relative) */
+            .item-visual {
+                position: relative; 
+                left: auto;
+                top: auto;
+                transform: none; 
+                margin-bottom: 20px; /* 텍스트와의 간격 */
+                pointer-events: auto;
+            }
+
+            .product-image {
+                width: 70vw; 
+                height: 70vw;
+                max-width: 300px;
+                max-height: 300px;
+            }
+            
+            /* 3. 텍스트 영역: 이미지 하단 배치 및 중앙 정렬 (Relative) */
+            .item-content {
+                position: relative; 
+                margin: 0 auto; 
+                right: auto; 
+                left: auto; 
+                top: auto;
+                transform: none; 
+                width: 90%; 
+                max-width: 400px;
+                text-align: center; 
+                padding: 0; 
+            }
+
+            .item-content .main-title {
+                font-size: 2rem;
+            }
+
+            .item-content .sub-text {
+                font-size: 0.85rem;
+            }
+            
+            .item-content .price-box {
+                font-size: 1rem;
+            }
+        }

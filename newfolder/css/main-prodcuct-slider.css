@@ -1,0 +1,187 @@
+/* =========================================
+ * 기본 레이아웃 및 섹션 스타일 
+ * ========================================= */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    background-color: #f4f4f4; 
+}
+.section { 
+    padding: 40px 0; 
+    border: 1px solid #ccc; 
+    background-color: #555; 
+} 
+.container { 
+    max-width: 1240px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+h2 { 
+    text-align: center; 
+    margin-bottom: 30px; 
+    font-weight: bold; 
+    color: white; 
+}
+
+/* =========================================
+ * 2. 수직 Swiper & 4열 그리드 스타일
+ * ========================================= */
+
+/* 슬라이더 컨테이너: 너비 1240px, 높이 2개 행에 맞춤 */
+#main-product-slider {
+    position: relative;
+    width: 1240px; 
+    height: 960px; /* 상품 한 행 높이(약 480px) * 2개 행 + 간격 (실제 구조 고려 높이 조정) */
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+/* Swiper Wrapper: 수직 방향으로 정렬합니다. */
+#main-product-slider .swiper-wrapper {
+    flex-direction: column; /* 수직으로 슬라이드 되도록 설정 */
+    gap: 20px; /* 행 간격 (수직 간격) */
+    padding-right: 150px; /* 컨트롤 영역 공간 확보 */
+}
+
+/* Swiper Slide: 한 번에 보이는 상품 '그룹' (여기서는 2개 행)의 높이 */
+#main-product-slider .swiper-slide {
+    width: 100% !important; 
+    height: 960px; /* 한 행의 높이를 대략 470px로 보고 2개 행에 간격 포함 */
+    box-sizing: border-box;
+    background: transparent;
+    
+    /* ▼ 2행 그리드 레이아웃 적용 (한 슬라이드에 2행 표시) ▼ */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* 2개 행 */
+    gap: 20px; /* 행 간격 */
+}
+
+/* 상품 리스트 UL */
+#main-product-slider .xans-product-listitem {
+    /* 상품 행 리스트는 4열 그리드를 가집니다. */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4열 */
+    gap: 30px; /* 상품 간 열 간격 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 상품 개별 LI */
+#main-product-slider .xans-record- {
+    /* LI 자체는 그리드 아이템입니다. */
+    background-color: #f8f8f8; /* 상품 배경색 (실제 쇼핑몰과 유사하게) */
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+/* 상품 썸네일 이미지 크기 조정 */
+.themePrdItems .-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 상품 정보 텍스트 스타일 (컨트롤 영역 외곽 스타일링이므로, 자세한 내용은 생략) */
+.themePrdItems .-name { 
+    font-weight: bold; 
+    color: #333; 
+}
+.themePrdItems .xans-product-listitem-1 .xans-record- div { 
+    font-size: 12px;
+}
+.themePrdItems .xans-product-listitem-1 li:last-child div {
+    color: #008BCC;
+    font-weight: bold;
+}
+
+
+/* ******* 컨트롤 오버레이 스타일 (우측 상단으로 배치) ******* */
+.ub-swiper-controls-overlay .ub-swiper-controls {
+   position: absolute;
+   top: 0; 
+   right: -100px; /* 1240px 컨테이너 바깥 우측으로 배치 */
+   bottom: 0;
+   z-index: 10;
+   width: 100px; 
+   height: 100%;
+   display: flex;
+   flex-direction: column; 
+   justify-content: flex-start; 
+   align-items: center;
+   gap: 1rem;
+   box-sizing: border-box;
+   padding: 20px 0; 
+}
+
+/* 네비게이션 화살표: 흰색으로 반전 */
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-prev,
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-next{
+    position: static; 
+    width: 30px; height: 30px; 
+    transform: none; 
+    cursor: pointer;
+    filter: invert(100%); /* 흰색 화살표 */
+}
+
+/* 화살표 이미지 경로 및 순서 */
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-prev{
+    order: 2; 
+    background-image: url(/myfolder/images/arrow_up.svg); 
+}
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-next{
+    order: 4; 
+    background-image: url(/myfolder/images/arrow_down.svg); 
+}
+
+/* 무한 반복이 없을 때 비활성화된 화살표 스타일 */
+.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Custom Fraction (숫자) */
+.ub-swiper.ub-swiper-controls-overlay .custom-fraction{
+  order: 3;
+  color: #fff !important; 
+  font-size: 14px;
+}
+
+/* progressbar 스타일링 (세로) */
+.ub-swiper.ub-swiper-controls-overlay .swiper-pagination-progressbar {
+    position: static; 
+    order: 1;
+    width: 4px; 
+    height: 100px; 
+    background: rgba(255, 255, 255, 0.4);
+}
+.ub-swiper.ub-swiper-controls-overlay .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #000;
+}
+
+/* 자동 재생 토글 버튼 */
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle { 
+    order: 5; 
+    margin-top: 10px; 
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-play,
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-pause {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    background: center/contain no-repeat;
+    width: 20px; height: 20px;
+    filter: invert(100%); 
+}
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-play{
+    background-image: url(/myfolder/images/play_arrow.png);
+}
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-pause{
+    background-image: url(/myfolder/images/pause.png);
+}
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .hidden { 
+    display: none; 
+}

@@ -855,3 +855,8 @@ content_list
     .df-bannermanager div[df-banner-clone] iframe{
       display: block; width: 100%; height: 100%;
     }
+
+
+    .tab-slides .ec-base-product .prdList.swiper-wrapper{
+  flex-wrap: nowrap;
+} 

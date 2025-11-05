@@ -771,3 +771,58 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     .df-bannermanager div[df-banner-clone] iframe{
       display: block; width: 100%; height: 100%;
     }
+
+
+    /* ****************
+    김샬롯 섹션 sytle */
+
+     /* 1. 전체 화면 섹션 (.section_full) */
+        .section_full{
+            /* 뷰포트 전체 크기 */
+            width: 100vw;
+            height: 100vh;
+            /* 배경색 지정 (원본 이미지의 분홍색 계열) */
+            background-color: #f38d9e; 
+            
+            /* 내부 요소(ul) 중앙 배치 */
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+        }
+
+        /* 2. UL 컨테이너 (ul.title) */
+        /* ul이 이미지와 텍스트를 담고 있으며, Flexbox 아이템으로 중앙에 배치됨 */
+        .section_full .wlakingkim > ul {
+          
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            /* 내용(li와 img)을 세로로 중앙 정렬하기 위해 Flexbox 사용 */
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            
+            /* 이미지 크기 제한을 위해 최대 크기 지정 */
+            max-width: 50%; 
+            max-height: 50vh; 
+            gap: 10px; /* 텍스트와 이미지 사이의 간격 */
+        }
+
+        /* 3. 리스트 아이템 (li) - 텍스트 스타일 */
+        .section_full_kim .wlakingkim> ul > li {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+        }
+
+        /* 4. GIF 이미지 (.section_full img) - 반응형 설정 */
+        .section_full .wlakingkim > ul > img {
+            /* 부모(ul)의 최대 크기에 맞춰 이미지 크기 조절 */
+            max-width: 100%; 
+            max-height: 100%;
+            /* 이미지의 원래 종횡비를 유지하며 크기 조절 */
+            height: auto; 
+            width: auto;
+            display: block;
+        }

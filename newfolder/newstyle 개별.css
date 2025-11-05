@@ -209,7 +209,7 @@ visual-swiper (비주얼/메인 슬라이더)
     }
 }
 /* 1. Swiper 컨테이너를 기준으로 설정 */
-.swiper.visual_swiper {
+.swiper.visual_swiper .swiper-wrapper .swiper-slide {
     position: relative; 
 }
 
@@ -221,7 +221,7 @@ visual-swiper (비주얼/메인 슬라이더)
     transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
     z-index: 20; 
     
-    font-family: "Pretendard", sans-serif;
+    font-family: "Pretendard";
     /* 텍스트 영역을 좌측 절반 정도로 제한 */
     width: 45%; 
     max-width: 500px; 

@@ -1,4 +1,13 @@
-  .ub-wrapper {
+
+        /*
+         * CSS: Vertical Slider Styles (Split + Responsive)
+         * 이 슬라이더 섹션만 독립적인 뷰포트 기능을 하도록 합니다.
+         */
+        
+        /* * 뷰포트 전체 크기 설정: 
+         * 최상위 래퍼 (.ub-wrapper)는 이제 overflow: hidden을 가집니다.
+         */
+        .ub-wrapper {
             width: 100vw;
             height: 100vh; /* 이 섹션만 화면 전체 높이를 차지 */
             /* 오버플로우 숨김 처리하여 섹션 밖 컨텐츠를 가립니다. */
@@ -26,7 +35,7 @@
         .fixed-header-box {
             position: sticky; 
             top: 60px; /* 뷰포트 상단에서 60px 떨어진 위치에 고정 */
-            left: 10vw;
+            left: 5vw;
             padding: 10px 0;
             z-index: 9999; /* 다른 요소 위에 표시 */
             color: #2c2c2c;

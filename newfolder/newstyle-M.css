@@ -1,0 +1,289 @@
+
+/*****
+newstyle (변수/그리드)
+***/
+/* @import url(/newfolder/css/ub-variables.css); */
+/* @import url(/newfolder/css/ub-grid-system.css); */
+
+
+/********
+.prdList (상품 목록 스타일 - 기존 newstyle-M.css에 존재하는 내용)
+** */
+
+.ec-base-product .prdList{
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.main_product_slide .ec-base-product .prdList{
+  flex-wrap: nowrap;
+}
+
+.ec-base-product .prdList >li{
+  flex:none;
+  margin: 0 0 70px 0;
+}
+
+.ec-base-product .prdList .prdList__item{
+  margin: 0 10px;
+}
+
+/* ... (상품 목록 하위 스타일) ... */
+.ec-base-product  .prdList__item .thumbnail{}
+.ec-base-product  .prdList__item .thumbnail .prdIcon.ec-product-bgRT{
+  background-position: calc(100% - 10px)  calc(0% + 10px);
+}
+.ec-base-product  .prdList__item .thumbnail .icon__box{}
+
+
+/* ================================================= 
+메인 배너 관련 기존 스타일 (수정 최소화)
+================================================= */
+
+/* 1. 최상위 섹션 (오버레이 기준점 설정) */
+.section.visual-section {
+    width: 100%;
+    overflow-x: hidden; 
+    position: relative; 
+}
+
+
+/* 2. 네비게이션 화살표 버튼 재정의 */
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-prev,
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-next{
+    position: static; 
+    width: 20px; height: 20px;
+    transform: none; 
+    top: auto;
+    bottom: auto;
+    z-index: 10;
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* 검은색 이미지를 흰색으로 반전시키는 필터 유지 */
+    filter: invert(100%); 
+}
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-prev{
+    background-image: url(/myfolder/images/arrow_back.svg);
+}
+.ub-swiper.ub-swiper-controls-overlay .swiper-button-next{
+    background-image: url(/myfolder/images/arrow_forward.svg);
+}
+/* Custom Fraction 스타일링 */
+.ub-swiper.ub-swiper-controls-overlay .custom-fraction{
+  color: #fff !important; 
+  font-size: 14px;
+  white-space: nowrap;
+}
+/* 재생/일시정지 버튼 아이콘에 invert 필터 유지 */
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-play,
+.ub-swiper.ub-swiper-controls-overlay #btn-autoplay-toggle .icon-pause{
+    filter: invert(100%);
+}
+/* 제어 요소 래퍼(.visual-controls-fixed) 위치 조정 (기존 설정) */
+.visual-controls-fixed {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end; /* 기본 설정은 오른쪽 끝 정렬 */
+    align-items: center;
+    gap: 15px; 
+}
+
+
+/* =======================================
+[NEW OVERRIDE] Y축 중앙 정렬 및 오버레이 구현
+======================================= 
+*/
+
+/* 1. 섹션: 오버레이의 기준점 재확인 */
+.visual-section.section_full {
+    position: relative !important; 
+    display: block !important; 
+}
+
+/* 2. 오버레이 래퍼 (.visual-absolute-overlay): 텍스트/컨트롤러의 정렬 컨테이너 (핵심) */
+.visual-absolute-overlay {
+    position: absolute; /* swiper와 겹치도록 설정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    
+    /* 콘텐츠를 Y축 중앙에 정렬하기 위한 Flexbox 설정 */
+    display: flex;
+    flex-direction: column; /* 텍스트와 컨트롤러를 세로로 쌓음 */
+    justify-content: center; /* **수직(Y축) 중앙 정렬** */
+    align-items: flex-start; /* 수평(X축) 좌측 정렬 */
+    
+    /* 최대 너비 및 패딩 설정 (가운데 정렬된 컨텐츠 영역) */
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* 3. 슬라이더 (.swiper): 배경 이미지처럼 영역 전체를 채우도록 재배치 */
+.visual-absolute-overlay > .swiper {
+    position: absolute; /* 절대 위치로 오버레이를 덮음 */
+    top: 0;
+    left: 0;
+    width: 100% !important; 
+    height: 100%;
+    z-index: 1; /* 이미지이므로 텍스트/컨트롤보다 z-index를 낮게 설정 */
+}
+
+/* 4. 텍스트 영역 (.visual-text-area) */
+
+    .title-box-case {
+      
+        }
+
+        .title-box-case .title-box-header {
+     
+        }
+
+        .title-box-case .title-box-header .tltle-box-text {
+         
+           
+        }
+
+/* 텍스트 세부 스타일 */
+.visual-absolute-overlay .section-title-box { 
+    font-size: 1.5vw; 
+    font-weight: 500;
+    margin-bottom: 5px; 
+    color: #FFF !important; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.visual-absolute-overlay .section-subtitle-box { 
+    font-size: 3vw; 
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px; 
+    color: #FFF !important; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.visual-absolute-overlay .section-subtitle-text-box p { 
+    font-size: 1.1vw;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0; 
+    color: #EEE !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 5. 컨트롤러 영역 (.ub-swiper-controls): 텍스트 아래에 좌측 정렬되도록 */
+.visual-absolute-overlay .ub-swiper-controls.visual-controls-fixed {
+    z-index: 10;
+    /* 텍스트와 동일한 너비로 제한 */
+    width: 45%; 
+    
+    /* 기존 스타일 오버라이드 */
+    position: static !important; 
+    display: flex !important;
+    justify-content: flex-start !important; /* 좌측 정렬 */
+    align-items: center;
+    gap: 10px; 
+    padding: 0;
+}
+
+/* 6. 컨트롤 요소 세부 위치 및 스타일 조정 */
+.visual-controls-fixed .swiper-pagination-progressbar {
+    order: 1;
+    width: 150px;
+    height: 3px;
+    position: static !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+{background-color: #b6b6b6;}
+ 
+.visual-controls-fixed .swiper-pagination-progressbar-fill {
+    background: #FFF !important;
+}
+.visual-controls-fixed .custom-fraction { 
+    order: 2; 
+    font-size: 14px;
+    color: #FFF !important;
+}
+.visual-controls-fixed .swiper-button-prev { order: 3; }
+.visual-controls-fixed .swiper-button-next { order: 4; }
+.visual-controls-fixed #btn-autoplay-toggle { 
+    order: 5; 
+    margin-left: 10px; 
+}
+
+
+/* ================================================= 
+모바일 반응형 스타일 (기존 newstyle-M.css의 내용)
+================================================= */
+
+/* @media (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .ec-base-product .prdList >li {
+        margin-bottom: 50px;
+    }
+}
+/* @media (max-width: 768px) */
+@media (max-width: 768px) {
+    /* 상품 목록 */
+    .ec-base-product .prdList >li {
+        margin: 0 0 40px 0;
+    }
+
+    .ec-base-product .prdList .prdList__item {
+        margin: 0 5px;
+    }
+
+    /* 탭 메뉴 */
+    .section.tab-horizontal .main_product_inner{
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .section.tab-horizontal .main_title{
+        margin-bottom: var(--space-lg);
+    }
+
+    .section.tab-horizontal  .main_product_tab{
+        justify-content:start; 
+        margin-left:0; 
+        overflow-x: auto; 
+        width: 100%;
+    }
+
+    .section.tab-horizontal  .main_product_tab li:first-child{
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    .section.tab-vertical {
+        flex-direction: column;
+    }
+    .section.tab-vertical .main_product_inner{
+        width:auto;
+        margin-right: 0;
+
+    }
+    .section.tab-vertical .main_product_tab{
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    .section.tab-vertical .main_product_tab >li{
+        margin-bottom: 0;
+    }
+    .section.tab-vertical .main_product_tab >li:first-child {
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    .section.tab-vertical .content_list{
+        width:100%;
+    }
+}

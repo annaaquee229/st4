@@ -1,0 +1,840 @@
+<table class="pdt_review_table tbl_review">
+            <colgroup>
+                <col style="width: 160px;">
+                <col style="width: auto;">
+            </colgroup>
+            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:80%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>jd******</em>
+                                            <span>2025.11.02</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13465840','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1762040701702.jpeg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            올 실버가 더 이뻣을 것 같아요!
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13465840" data-itemcd="306029162" data-bestyn="N" data-custno="3981032"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13465840" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="3981032"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13465840" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>de******</em>
+                                            <span>2025.10.28</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13440101','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1761662521300.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            데일리 귀걸이로 완전 정착<br>매일매일 하고다닙니다<br>안빼고 자도 아프지않고 변형없고<br>어떤옷이든 다 잘어울리는 진짜… 애착템 ♥️
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13440101" data-itemcd="306029162" data-bestyn="N" data-custno="3330813"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13440101" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="3330813"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13440101" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>su******</em>
+                                            <span>2025.10.26</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13429158','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1761432549757.jpeg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            이뻐요 사이즈도 딱이에요 변색만 안됏음 좋겟어여
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13429158" data-itemcd="306029162" data-bestyn="N" data-custno="8911042"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13429158" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="8911042"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13429158" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>lo******</em>
+                                            <span>2025.10.23</span>
+                                        </p>
+                                    </div>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            엄청 예쁜데 무거워서 귀가 아파요ㅠㅠ 익숙하신 분이면 괜찮을 것 같네요~
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13419844" data-itemcd="306029162" data-bestyn="N" data-custno="9259953"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13419844" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="9259953"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13419844" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>el******</em>
+                                            <span>2025.10.21</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13398031','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1761023338642.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            생각보다 더 임팩있어요 <br>원래 진주귀걸이를 365일 내내 했는데 오랜만에 진주귀걸이를 대체할만한걸 찾았어요 심플하고 어느옷에도 어울려요
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13398031" data-itemcd="306029162" data-bestyn="N" data-custno="6956425"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13398031" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="6956425"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13398031" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>rh******</em>
+                                            <span>2025.10.17</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13383829','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1760693606033.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            작지만 이뻐요ㅋㅋ<br>배송도 빠르고 마음에 드네요ㅋㅋ
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13383829" data-itemcd="306029162" data-bestyn="N" data-custno="3584234"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13383829" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="3584234"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13383829" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+            </tbody>
+        </table>
+        <table class="pdt_review_table tbl_review">
+            <colgroup>
+                <col style="width: 160px;">
+                <col style="width: auto;">
+            </colgroup>
+            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:80%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>jd******</em>
+                                            <span>2025.11.02</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13465840','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1762040701702.jpeg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            올 실버가 더 이뻣을 것 같아요!
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13465840" data-itemcd="306029162" data-bestyn="N" data-custno="3981032"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13465840" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="3981032"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13465840" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>de******</em>
+                                            <span>2025.10.28</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13440101','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1761662521300.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            데일리 귀걸이로 완전 정착<br>매일매일 하고다닙니다<br>안빼고 자도 아프지않고 변형없고<br>어떤옷이든 다 잘어울리는 진짜… 애착템 ♥️
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13440101" data-itemcd="306029162" data-bestyn="N" data-custno="3330813"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13440101" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="3330813"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13440101" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>su******</em>
+                                            <span>2025.10.26</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13429158','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1761432549757.jpeg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            이뻐요 사이즈도 딱이에요 변색만 안됏음 좋겟어여
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13429158" data-itemcd="306029162" data-bestyn="N" data-custno="8911042"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13429158" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="8911042"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13429158" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>lo******</em>
+                                            <span>2025.10.23</span>
+                                        </p>
+                                    </div>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            엄청 예쁜데 무거워서 귀가 아파요ㅠㅠ 익숙하신 분이면 괜찮을 것 같네요~
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13419844" data-itemcd="306029162" data-bestyn="N" data-custno="9259953"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13419844" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="9259953"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13419844" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>el******</em>
+                                            <span>2025.10.21</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13398031','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1761023338642.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            생각보다 더 임팩있어요 <br>원래 진주귀걸이를 365일 내내 했는데 오랜만에 진주귀걸이를 대체할만한걸 찾았어요 심플하고 어느옷에도 어울려요
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13398031" data-itemcd="306029162" data-bestyn="N" data-custno="6956425"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13398031" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="6956425"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13398031" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="pdt_review_align_wrap">
+                                        <div class="pdt_review_valign">
+                                            <div class="star-grade">
+                                                <strong style="width:100%"></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pdt_review_info">
+                                        <div class="product_review_info_left">
+                                                <div class="pdt_review_option">
+                                                            <p>
+                                                                <span>
+                                                                    구매옵션 : 
+                                                                        single type,
+                                                                </span>
+                                                            </p>
+                                                </div>
+                                        </div>
+                                        <p class="product_review_info_right">
+                                            <em>rh******</em>
+                                            <span>2025.10.17</span>
+                                        </p>
+                                    </div>
+                                            <ul class="pdt_review_photo">
+                                                <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13383829','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                    <img src="https://media.wconcept.co.kr/review/306029162/306029162_1760693606033.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                                </li>
+                                        </ul>
+                                    <div class="pdt_review_detail">
+                                        <p class="pdt_review_text">
+                                            작지만 이뻐요ㅋㅋ<br>배송도 빠르고 마음에 드네요ㅋㅋ
+                                        </p>
+                                    </div>
+
+                                    <div class="product_review_reaction">
+                                        <div class="btn_report_item">
+                                                <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13383829" data-itemcd="306029162" data-bestyn="N" data-custno="3584234"><span>신고</span></button>
+                                                <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13383829" data-paging="1" data-itemcd="306029162" data-bestyn="N" data-custno="3584234"><span>숨김</span></button>
+                                        </div>
+                                        <button type="button" class="like  btn_review_recommend" data-idxnum="13383829" data-itemcd="306029162"><span>0</span></button>
+                                    </div>
+                                </td>
+                            </tr>
+            </tbody>
+        </table>
+        <table class="pdt_review_table tbl_review">
+        <colgroup>
+            <col style="width: 160px;">
+            <col style="width: auto;">
+        </colgroup>
+        <tbody>
+                        <tr>
+                            <td>
+                                <div class="pdt_review_align_wrap">
+                                    <div class="pdt_review_valign">
+                                        <div class="star-grade">
+                                            <strong style="width:100%"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pdt_review_info">
+                                    <div class="product_review_info_left">
+                                            <div class="pdt_review_option">
+                                                        <p>
+                                                            <span>
+                                                                구매옵션 : 
+                                                                    single type,
+                                                            </span>
+                                                        </p>
+                                            </div>
+                                    </div>
+                                    <p class="product_review_info_right">
+                                        <em>so******</em>
+                                        <span>2025.09.26</span>
+                                    </p>
+                                </div>
+                                <div class="pdt_review_detail">
+                                    <p class="pdt_review_text">
+                                        이뻐요! 생각보단 작지만 여러 코디에 활용할수잇을것같아요!
+                                    </p>
+                                </div>
+
+                                <div class="product_review_reaction">
+                                    <div class="btn_report_item">
+                                            <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13291404" data-itemcd="306029162" data-bestyn="N" data-custno="4448469"><span>신고</span></button>
+                                            <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13291404" data-paging="3" data-itemcd="306029162" data-bestyn="N" data-custno="4448469"><span>숨김</span></button>
+                                    </div>
+                                    <button type="button" class="like  btn_review_recommend" data-idxnum="13291404" data-itemcd="306029162"><span>0</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="pdt_review_align_wrap">
+                                    <div class="pdt_review_valign">
+                                        <div class="star-grade">
+                                            <strong style="width:60%"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pdt_review_info">
+                                    <div class="product_review_info_left">
+                                            <div class="pdt_review_option">
+                                                        <p>
+                                                            <span>
+                                                                구매옵션 : 
+                                                                    single type,
+                                                            </span>
+                                                        </p>
+                                            </div>
+                                    </div>
+                                    <p class="product_review_info_right">
+                                        <em>wc******</em>
+                                        <span>2025.09.24</span>
+                                    </p>
+                                </div>
+                                <div class="pdt_review_detail">
+                                    <p class="pdt_review_text">
+                                        예쁘긴 한데<br>귀에 걸기가 너무 힘들어요<br>굵기도 굵고 링형이라 휘어져 있기도 한데다<br>링 사이 간격이 너무 좁아서 구멍 찾으려고<br>손가락 넣으려 해도 틈이 없어요<br>낄때마다 애 먹어서<br>손이 잘 안가요~
+                                    </p>
+                                </div>
+
+                                <div class="product_review_reaction">
+                                    <div class="btn_report_item">
+                                            <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13276333" data-itemcd="306029162" data-bestyn="N" data-custno="7187744"><span>신고</span></button>
+                                            <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13276333" data-paging="3" data-itemcd="306029162" data-bestyn="N" data-custno="7187744"><span>숨김</span></button>
+                                    </div>
+                                    <button type="button" class="like  btn_review_recommend" data-idxnum="13276333" data-itemcd="306029162"><span>0</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="pdt_review_align_wrap">
+                                    <div class="pdt_review_valign">
+                                        <div class="star-grade">
+                                            <strong style="width:100%"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pdt_review_info">
+                                    <div class="product_review_info_left">
+                                            <div class="pdt_review_option">
+                                                        <p>
+                                                            <span>
+                                                                구매옵션 : 
+                                                                    single type,
+                                                            </span>
+                                                        </p>
+                                            </div>
+                                    </div>
+                                    <p class="product_review_info_right">
+                                        <em>di******</em>
+                                        <span>2025.09.23</span>
+                                    </p>
+                                </div>
+                                        <ul class="pdt_review_photo">
+                                            <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13272045','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                <img src="https://media.wconcept.co.kr/review/306029162/306029162_1758637564911.jpg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                            </li>
+                                    </ul>
+                                <div class="pdt_review_detail">
+                                    <p class="pdt_review_text">
+                                        언제든 손이 갈 스타일입니다. 존재감은 있지만 그렇게 튀지 않고 골드와 실버가 섞여 있어서 어디든 매칭이 쉽다는 게 가장 큰 장점이에요. 무게감도 적당히 있어서 오히려 더 고급지게 느껴집니다
+                                    </p>
+                                </div>
+
+                                <div class="product_review_reaction">
+                                    <div class="btn_report_item">
+                                            <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13272045" data-itemcd="306029162" data-bestyn="N" data-custno="2293373"><span>신고</span></button>
+                                            <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13272045" data-paging="3" data-itemcd="306029162" data-bestyn="N" data-custno="2293373"><span>숨김</span></button>
+                                    </div>
+                                    <button type="button" class="like  btn_review_recommend" data-idxnum="13272045" data-itemcd="306029162"><span>0</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="pdt_review_align_wrap">
+                                    <div class="pdt_review_valign">
+                                        <div class="star-grade">
+                                            <strong style="width:100%"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pdt_review_info">
+                                    <div class="product_review_info_left">
+                                            <div class="pdt_review_option">
+                                                        <p>
+                                                            <span>
+                                                                구매옵션 : 
+                                                                    single type,
+                                                            </span>
+                                                        </p>
+                                            </div>
+                                    </div>
+                                    <p class="product_review_info_right">
+                                        <em>yj******</em>
+                                        <span>2025.09.21</span>
+                                    </p>
+                                </div>
+                                        <ul class="pdt_review_photo">
+                                            <li class="open-layer open-pop_photoDetail " onclick="WCK_COMMON_VIEWPRODUCT_RENEWAL_FN.ReviewDetail('13251204','306029162','M33439436','104', '15','N',this, 'detail');">
+                                                <img src="https://media.wconcept.co.kr/review/306029162/306029162_1758463397148.jpeg?RS=300" onerror="this.src='//static.wconcept.co.kr/mobile/images/common/onerror_img.png'">
+                                            </li>
+                                    </ul>
+                                <div class="pdt_review_detail">
+                                    <p class="pdt_review_text">
+                                        이뻐요! 생각보다 큽니다~ 살짝 무게감 있는편이고 고급져보여요
+                                    </p>
+                                </div>
+
+                                <div class="product_review_reaction">
+                                    <div class="btn_report_item">
+                                            <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13251204" data-itemcd="306029162" data-bestyn="N" data-custno="3215369"><span>신고</span></button>
+                                            <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13251204" data-paging="3" data-itemcd="306029162" data-bestyn="N" data-custno="3215369"><span>숨김</span></button>
+                                    </div>
+                                    <button type="button" class="like  btn_review_recommend" data-idxnum="13251204" data-itemcd="306029162"><span>0</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="pdt_review_align_wrap">
+                                    <div class="pdt_review_valign">
+                                        <div class="star-grade">
+                                            <strong style="width:100%"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pdt_review_info">
+                                    <div class="product_review_info_left">
+                                            <div class="pdt_review_option">
+                                                        <p>
+                                                            <span>
+                                                                구매옵션 : 
+                                                                    single type,
+                                                            </span>
+                                                        </p>
+                                            </div>
+                                    </div>
+                                    <p class="product_review_info_right">
+                                        <em>wc******</em>
+                                        <span>2025.09.16</span>
+                                    </p>
+                                </div>
+                                <div class="pdt_review_detail">
+                                    <p class="pdt_review_text">
+                                        선물 받았는데 영롱하고 예쁘네요!
+                                    </p>
+                                </div>
+
+                                <div class="product_review_reaction">
+                                    <div class="btn_report_item">
+                                            <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13225981" data-itemcd="306029162" data-bestyn="N" data-custno="8922552"><span>신고</span></button>
+                                            <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13225981" data-paging="3" data-itemcd="306029162" data-bestyn="N" data-custno="8922552"><span>숨김</span></button>
+                                    </div>
+                                    <button type="button" class="like  btn_review_recommend" data-idxnum="13225981" data-itemcd="306029162"><span>0</span></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="pdt_review_align_wrap">
+                                    <div class="pdt_review_valign">
+                                        <div class="star-grade">
+                                            <strong style="width:100%"></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pdt_review_info">
+                                    <div class="product_review_info_left">
+                                            <div class="pdt_review_option">
+                                                        <p>
+                                                            <span>
+                                                                구매옵션 : 
+                                                                    single type,
+                                                            </span>
+                                                        </p>
+                                            </div>
+                                    </div>
+                                    <p class="product_review_info_right">
+                                        <em>ta******</em>
+                                        <span>2025.09.04</span>
+                                    </p>
+                                </div>
+                                <div class="pdt_review_detail">
+                                    <p class="pdt_review_text">
+                                        크기가 생각보다 작기는하네요. 그래도 고급스러워 보여 만족합니다.
+                                    </p>
+                                </div>
+
+                                <div class="product_review_reaction">
+                                    <div class="btn_report_item">
+                                            <button type="button" class="link_txt open-layer open-pop_review_report" data-idxnum="13164020" data-itemcd="306029162" data-bestyn="N" data-custno="4189809"><span>신고</span></button>
+                                            <button type="button" class="link_txt btn_review_hide" data-mediumcd="M33439436" data-categorycd="104" data-idxnum="13164020" data-paging="3" data-itemcd="306029162" data-bestyn="N" data-custno="4189809"><span>숨김</span></button>
+                                    </div>
+                                    <button type="button" class="like  btn_review_recommend" data-idxnum="13164020" data-itemcd="306029162"><span>0</span></button>
+                                </div>
+                            </td>
+                        </tr>
+        </tbody>
+    </table>

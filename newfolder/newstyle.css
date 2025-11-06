@@ -2,7 +2,14 @@
 mystyle
 */
 
+/* newstyle.css 파일의 최상단에 추가 */
 
+
+
+/*****
+mystyle
+*/
+/* ... 기존 내용 ... */
 /***********
 변수 variables
 ******/
@@ -142,6 +149,7 @@ bottom:10px;
 */
 
 .section{
+    background-color: transparent;
 
 }
 
@@ -200,6 +208,48 @@ visual-swiper (비주얼/메인 슬라이더)
         width: 100%;
     }
 }
+/* 1. Swiper 컨테이너를 기준으로 설정 */
+.swiper.visual_swiper {
+    position: relative; 
+}
+
+/* 2. 텍스트 박스 (.title-box-case) 위치 설정: 좌측 세로 중앙 정렬 */
+.swiper.visual_swiper .title-box-case {
+    position: absolute;
+    top: 65%; 
+    left: 60px; /* 좌측 여백 (기존 컨트롤러 패딩과 동일) */
+    transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
+    z-index: 20; 
+    
+    font-family: "Pretendard", sans-serif;
+    /* 텍스트 영역을 좌측 절반 정도로 제한 */
+    width: 45%; 
+    max-width: 500px; 
+    
+    text-align: left;
+    color: #555; 
+}
+
+/* 텍스트 세부 스타일 */
+.swiper.visual_swiper .title-box-case .title-box-header {
+    font-size: 18px; 
+    font-weight: 700;
+    margin-bottom: 8px; 
+    color: #555;
+}
+.swiper.visual_swiper .title-box-case .title-box-text {
+    font-size: 48px; 
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #555;
+}
+.swiper.visual_swiper .title-box-case .title-box-subtext {
+    font-size: 18px; 
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555; 
+}
 
 .visual-section .visual_swiper{
   width: var(--visual-swiper-width);
@@ -226,14 +276,14 @@ visual-swiper (비주얼/메인 슬라이더)
     margin: 0;
 }
 .ub-swiper .swiper-button-prev{
-    background-image: url(/newfolder/images/arrow_back_light.svg);
+    background-image: url(/newfolder/images/arrow_back.svg);
     background-position: center;
     left: auto; /* 중복 제거 */
     right: auto; /* 중복 제거 */
     filter: invert(100%);
 }
 .ub-swiper  .swiper-button-next {
-    background-image: url(/newfolder/images/arrow_forward_light.svg);
+    background-image: url(/newfolder/images/arrow_forward.svg);
     background-position: center;
     filter: invert(100%);
     left: auto; /* 중복 제거 */
@@ -295,7 +345,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
    align-items: center;
    gap: 0.5rem; /* 요소 간 간격 */
    box-sizing: border-box;
-   padding: 0 100px;  /*좌측 여백*/
+   padding: 100px 50px;  /*좌측 여백*/
   }
 
 
@@ -326,6 +376,10 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
 .ub-swiper.ub-swiper-controls-overlay .swiper-slide-active{
   transform: scale(1);
 }
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+{background-color: #b6b6b6;}
+
 .ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   /* ▼ 이 부분이 현재 슬라이드 진행률을 나타냅니다. ▼ */
   background: var(--primary-color, #000); /* 검은색 또는 변수 사용 */
@@ -398,7 +452,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
 .ub-dan{}
 .ub-dan-row{}
 .ub-dan-item{
-  border:1px solid #f00;
+  border:1px solid transparent;
 }
 /**********
 단처리 태블릿 이하 스크롤 (유지)
@@ -717,3 +771,16 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     .df-bannermanager div[df-banner-clone] iframe{
       display: block; width: 100%; height: 100%;
     }
+
+    /* /배너매니저 마감 */
+
+    
+    .section .visual-section .section_full_kim{
+    background-color: #f38d9e;
+    }
+    .section .visual-section .section_full_kim ul.title_kim {
+     
+       background: url(/newfolder/images/kim01.gif)
+      no-repeat center center / 70vw auto;
+      padding:5rem 1rem 3rem;}
+    

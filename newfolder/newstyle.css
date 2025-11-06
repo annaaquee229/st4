@@ -149,7 +149,7 @@ bottom:10px;
 */
 
 .section{
-    background-color: #f383a7;
+    background-color: transparent;
 
 }
 
@@ -771,3 +771,16 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     .df-bannermanager div[df-banner-clone] iframe{
       display: block; width: 100%; height: 100%;
     }
+
+    /* /배너매니저 마감 */
+
+    
+    .section .visual-section .section_full_kim{
+    background-color: #f38d9e;
+    }
+    .section .visual-section .section_full_kim ul.title_kim {
+     
+       background: url(/newfolder/images/kim01.gif)
+      no-repeat center center / 70vw auto;
+      padding:5rem 1rem 3rem;}
+    

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Grid Content Banner</title>
+  <style>
+    /*
+      ** 전체 스타일 초기화 및 기본 폰트 설정 **
+    */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /*
+      ** body에 전체 vw를 차지하는 배경색 적용 **
+    */
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.5;
+      color: #333;
+      background-color: #f7f3e8; /* 전체 뷰포트 배경색 */
+    }
+
+    /*
+      ** 메인 섹션 스타일 **
+      - 배경색은 body가 담당하므로 여기서는 제거
+      - 콘텐츠는 중앙에 정렬되도록 max-width 설정
+    */
+    #mainGridContentBanner {
+      max-width: 1400px; 
+      margin: 0 auto;
+      padding: 50px 15px; 
+      /* 이전 코드의 배경색은 body로 이동했습니다. */
+    }
+
+    /*
+      ** 그리드 리스트 스타일 **
+    */
+    .main-grids {
+      display: grid;
+      gap: 0; 
+      list-style: none;
+      padding: 0;
+    }
+
+    /* 모바일 기본: 1열 */
+    .main-grids {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* 태블릿 (예: 768px 이상): 2열 */
+    @media (min-width: 768px) {
+      .main-grids {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* PC (예: 1024px 이상): 3열 */
+    @media (min-width: 1024px) {
+      .main-grids {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /*
+      ** 리스트 항목 (카드) 스타일 **
+    */
+    .main-grids > li {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-bottom: 20px; 
+    }
+
+    .main-grids > li a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 이미지 컨테이너 */
+    .grid-image-link {
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .grid-image-link img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* 제목 스타일 */
+    .grid-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 15px; 
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* 설명 텍스트 스타일 */
+    .grid-description {
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      padding: 0 15px;
+      color: #555;
+    }
+
+    /* 버튼 스타일 (밑줄 스타일) */
+    .grid-button {
+      display: inline-block;
+      color: #333;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-decoration: underline;
+      text-transform: uppercase;
+      margin-top: auto; 
+      align-self: center; 
+      padding: 5px 0;
+    }
+
+    .grid-button:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <section id="mainGridContentBanner">
+    <ul class="main-grids" data-grids-pc="3">
+      <li>
+          <a href="#none" class="grid-image-link">
+              <img src="https://designtemplate.cafe24.com/web/commas/template_sample_images/ravie/_maingridcontentbanner_001.jpg" alt="Mindful makeup.">
+          </a>
+          <a href="#none" class="grid-title">Mindful makeup.</a>
+          <p class="grid-description">Discover multifunctional makeup packed with skin care superstars.</p>
+          <a href="#none" class="grid-button"><span>READ THE LATEST</span></a>
+      </li>
+      <li>
+          <a href="#none" class="grid-image-link">
+              <img src="https://designtemplate.cafe24.com/web/commas/template_sample_images/ravie/_maingridcontentbanner_002.jpg" alt="Follain body care is back">
+          </a>
+          <a href="#none" class="grid-title">Follain body care is back</a>
+          <p class="grid-description">Nourishing clean formulas to support your body, mind, and spirit—now in more sustainable packaging.</p>
+          <a href="#none" class="grid-button"><span>SHOP NOW</span></a>
+      </li>
+      <li>
+          <a href="#none" class="grid-image-link">
+              <img src="https://designtemplate.cafe24.com/web/commas/template_sample_images/ravie/_maingridcontentbanner_003.jpg" alt="Follain body care is back">
+          </a>
+          <a href="#none" class="grid-title">Follain body care is back</a>
+          <p class="grid-description">Nourishing clean formulas to support your body, mind, and spirit—now in more sustainable packaging.</p>
+          <a href="#none" class="grid-button"><span>SHOP NOW</span></a>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>

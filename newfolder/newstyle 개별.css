@@ -149,10 +149,13 @@ bottom:10px;
 */
 
 .section{
-    background-color: #f383a7;
+    background-color: #fff;
 
 }
-
+.section .visual-section .section_full_banner{
+    background-color: #F8F3E8;
+  
+}
 #contents > .section_full_content_center{
   background-color: var(--section-bg);
   width:100%;
@@ -782,7 +785,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
             width: 100vw;
             height: 100vh;
             /* 배경색 지정 (원본 이미지의 분홍색 계열) */
-            background-color: #f38d9e; 
+            background-color: #F8F3E8; 
             
             /* 내부 요소(ul) 중앙 배치 */
             display: flex;

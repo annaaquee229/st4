@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
         slidesPerView: "auto",
          spaceBetween: 30,
         autoplay: { delay: 2500, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", type: "flaction" },
+        pagination: { el: ".swiper-pagination", type: "progressbar" },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",

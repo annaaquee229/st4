@@ -1,0 +1,121 @@
+/*
+  ** 전체 스타일 초기화 **
+*/
+
+.section {
+    background-color: transparent;}
+    
+#mainGridContentBanner02 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  ** 4단 메인 섹션 스타일: 베이지색 배경색 (#f7f3e8) 적용 및 중앙 정렬 **
+*/
+#mainGridContentBanner02 {
+  max-width: 1400px; 
+  margin: 0 auto;
+  padding: 50px 15px; 
+  /* 배경색을 섹션 ID에 직접 적용하여 안정화 */
+  background-color: #f7f3e8 !important; 
+}
+
+/*
+  ** 4단 그리드 리스트 스타일 **
+*/
+.main-grids02 {
+  display: grid !important;
+  gap: 0; 
+  list-style: none;
+  padding: 0;
+}
+
+/* 모바일 기본: 1열 */
+.main-grids02 {
+  grid-template-columns: repeat(1, 1fr) !important;
+}
+
+/* 태블릿 (예: 768px 이상): 2열 */
+@media (min-width: 768px) {
+  .main-grids02 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* PC (예: 1024px 이상): 4열 - !important로 강제 적용 */
+@media (min-width: 1024px) {
+  .main-grids02 {
+    grid-template-columns: repeat(4, 1fr) !important; 
+  }
+}
+
+/*
+  ** 4단 리스트 항목 (카드) 스타일 **
+*/
+.main-grids02 > li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 20px; 
+  /* 폰트 스타일은 body에서 가져오지 않고 명확히 지정 */
+  font-family: 'Georgia', serif; 
+  line-height: 1.5;
+  color: #333;
+}
+
+.main-grids02 > li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4단 이미지 컨테이너 */
+.grid-image-link02 {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.grid-image-link02 img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* 4단 제목 스타일 */
+.grid-title02 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px; 
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* 4단 설명 텍스트 스타일 */
+.grid-description02 {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  color: #555;
+}
+
+/* 4단 버튼 스타일 (밑줄 스타일) */
+.grid-button02 {
+  display: inline-block;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  margin-top: auto; 
+  align-self: center; 
+  padding: 5px 0;
+}
+
+.grid-button02:hover {
+  opacity: 0.7;
+}
+
+.section #mainGridContentBanner02{background-color: #f8f3e8;}

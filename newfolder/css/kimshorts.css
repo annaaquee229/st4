@@ -1,64 +1,56 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gif 김샬롯</title>
-    
-    <style>
-        /* 기본 스타일 초기화 */
-        * {
+ /* 기본 스타일 초기화 */
+        .section-kim {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         /* HTML과 body가 전체 뷰포트를 차지하도록 설정 */
-        html, body {
-            height: 100%;
-            width: 100%;
+        .secion #section_full_kim {
+            height: 50% !important;
+            width: 100% !important;
             overflow: hidden; /* 스크롤 방지 */
         }
 
         /* 1. 전체 화면 섹션 (.section_full) */
         .section_full_kim{
+            background-size: 400px 400px;
+            margin: 0;
+            padding: 0;
             /* 뷰포트 전체 크기 */
             width: 100vw;
-            height: 100vh;
+            height: auto;
             /* 배경색 지정 (원본 이미지의 분홍색 계열) */
             background-color: #f38d9e; 
             
             /* 내부 요소(ul) 중앙 배치 */
             display: flex;
             justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
+            align-items: top /* 세로 중앙 정렬 */
+           
         }
 
         /* 2. UL 컨테이너 (ul.title) */
         /* ul이 이미지와 텍스트를 담고 있으며, Flexbox 아이템으로 중앙에 배치됨 */
         .section_full_kim > ul {
-          
+      background-attachment: static;
+          width:50%;
+          height:50%;
             list-style: none;
             padding: 0;
             margin: 0;
-            
+          
             /* 내용(li와 img)을 세로로 중앙 정렬하기 위해 Flexbox 사용 */
             display: flex;
-            flex-direction: column; 
             align-items: center; 
             
             /* 이미지 크기 제한을 위해 최대 크기 지정 */
-            max-width: 90%; 
-            max-height: 90vh; 
-            gap: 10px; /* 텍스트와 이미지 사이의 간격 */
+            max-width: 300px; 
+            max-height: 300px;  
+
         }
 
-        /* 3. 리스트 아이템 (li) - 텍스트 스타일 */
-        .section_full_kim > ul > li {
-            font-size: 2em;
-            color: #333;
-            text-align: center;
-        }
+    
 
         /* 4. GIF 이미지 (.section_full img) - 반응형 설정 */
         .section_full_kim > ul > img {
@@ -70,14 +62,3 @@
             width: auto;
             display: block;
         }
-    </style>
-</head>
-<body>
-    <section class="section visual-section section_full_kim">
-        <ul calss="title"> 
-            <li>text들어갈수도 있음</li>
-            <img src="/newfolder/images/kim01.gif" alt="김샬롯">
-        </ul>
-    </section>
-</body>
-</html>

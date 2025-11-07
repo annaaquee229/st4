@@ -203,7 +203,7 @@ visual-swiper (비주얼/메인 슬라이더)
 */
 .visual-section{
   --visual-swiper-width:100%;
-  margin-bottom:120px;
+  margin-bottom:0;
 }
 @media (max-width: 1024px) {
    #container #contents.ub-style  {
@@ -264,7 +264,8 @@ visual-swiper (비주얼/메인 슬라이더)
 .visual-section .swiper-slide picture img{
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   max-width: none;
 }
 
@@ -591,7 +592,7 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
 /* 수평 탭버튼 section.tab-horizontal (유지) */
 .section.tab-horizontal .main_product_inner{
   display: flex;
-  justify-content: space-between;
+
   align-items: end;
   margin-bottom: var(--space-md);
 }
@@ -780,6 +781,9 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
     김샬롯 섹션 sytle */
 
      /* 1. 전체 화면 섹션 (.section_full) */
+
+
+
         .section_full{
             /* 뷰포트 전체 크기 */
             width: 100vw;
@@ -792,6 +796,9 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
             justify-content: center; /* 가로 중앙 정렬 */
             align-items: center; /* 세로 중앙 정렬 */
         }
+
+
+.section .section_full_banner{background-color: #f38d9e !important;}
 
         /* 2. UL 컨테이너 (ul.title) */
         /* ul이 이미지와 텍스트를 담고 있으며, Flexbox 아이템으로 중앙에 배치됨 */

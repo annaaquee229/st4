@@ -1,160 +1,200 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Grid Content Banner</title>
-  <style>
-    /*
-      ** 전체 스타일 초기화 및 기본 폰트 설정 **
-    */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>최종 4x2 Grid Layout (정사각형 비율)</title>
+    <style>
+        /* ================================================= */
+        /* 기본 스타일 및 그리드 컨테이너 설정 (4열, 2행) */
+        /* ================================================= */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin: 0;
+        }
 
-    /*
-      ** body에 전체 vw를 차지하는 배경색 적용 **
-    */
-    body {
-      font-family: 'Georgia', serif;
-      line-height: 1.5;
-      color: #333;
-      background-color: #f7f3e8; /* 전체 뷰포트 배경색 */
-    }
+        #mainGridContentBanner {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
 
-    /*
-      ** 메인 섹션 스타일 **
-      - 배경색은 body가 담당하므로 여기서는 제거
-      - 콘텐츠는 중앙에 정렬되도록 max-width 설정
-    */
-    #mainGridContentBanner {
-      max-width: 1400px; 
-      margin: 0 auto;
-      padding: 50px 15px; 
-      /* 이전 코드의 배경색은 body로 이동했습니다. */
-    }
+        .main-grids {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            /* 4열 설정 (1fr씩 균등 분할) */
+            grid-template-columns: repeat(4, 1fr); 
+            /* 2행 설정 */
+            grid-template-rows: auto;   
+            gap: 10px; 
+        }
 
-    /*
-      ** 그리드 리스트 스타일 **
-    */
-    .main-grids {
-      display: grid;
-      gap: 0; 
-      list-style: none;
-      padding: 0;
-    }
+        /* ================================================= */
+        /* **정사각형 비율 구현 및 공통 스타일** */
+        /* ================================================= */
+        .main-grids li {
+            position: relative; 
+            overflow: hidden; 
+            background-color: #fff; border: 1px solid #ddd;
+        }
 
-    /* 모바일 기본: 1열 */
-    .main-grids {
-      grid-template-columns: repeat(1, 1fr);
-    }
+        /* 높이를 너비와 같게 설정하여 정사각형 비율을 만듭니다. */
+        .main-grids li::before {
+            content: '';
+            display: block;
+            padding-bottom: 100%; /* 너비 대비 100% 높이 (정사각형) */
+        }
+        
+        /* 이미지와 링크 컨테이너 */
+        .main-grids li .grid-image-link {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+        .main-grids li img {
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 0.3s ease;
+        }
 
-    /* 태블릿 (예: 768px 이상): 2열 */
-    @media (min-width: 768px) {
-      .main-grids {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+        /* 호버 오버레이 */
+        .main-grids li .grid-image-link::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.45); opacity: 0; transition: opacity 0.3s ease; z-index: 10;
+        }
 
-    /* PC (예: 1024px 이상): 3열 */
-    @media (min-width: 1024px) {
-      .main-grids {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
+        /* 텍스트 요소들 (숨김) */
+        .main-grids li .grid-title, .main-grids li .grid-description {
+            position: absolute; left: 50%; transform: translate(-50%, 20px); width: 90%;
+            text-align: center; opacity: 0; transition: opacity 0.4s ease, transform 0.4s ease; 
+            color: #ffffff; z-index: 20; text-decoration: none;
+        }
+        .main-grids li .grid-title { top: 40%; font-size: 1.1em; font-weight: bold; }
+        .main-grids li .grid-description { top: 60%; font-size: 0.8em; }
 
-    /*
-      ** 리스트 항목 (카드) 스타일 **
-    */
-    .main-grids > li {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      padding-bottom: 20px; 
-    }
+        /* 호버 시 효과 */
+        .main-grids li:hover .grid-image-link::before { opacity: 1; }
+        .main-grids li:hover img { transform: scale(1.05); }
+        .main-grids li:hover .grid-title, .main-grids li:hover .grid-description { 
+            opacity: 1; transform: translate(-50%, 0); 
+        }
 
-    .main-grids > li a {
-      text-decoration: none;
-      color: inherit;
-    }
+        /* ================================================= */
+        /* **배치 핵심:** 4열 2행 구조에 따른 위치 지정 */
+        /* ================================================= */
 
-    /* 이미지 컨테이너 */
-    .grid-image-link {
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
+        /* 1행 (Row 1): Item 1, Item 2 */
+        .item-1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+        .item-2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+        
+        /* 2행 (Row 2): Item 3, Item 4 */
+        .item-3 { grid-column: 1 / 2; grid-row: 2 / 3; }
+        .item-4 { grid-column: 2 / 3; grid-row: 2 / 3; }
+        
+        /* Large Square (Item 5): Columns 3,4 와 Rows 1,2 차지 (2x2) */
+        .large-square {
+            grid-column: 3 / 5; /* 3열, 4열 차지 (2칸 가로) */
+            grid-row: 1 / 3;    /* 1행, 2행 차지 (2칸 세로) */
+            background-color: #ffefd5; 
+        }
 
-    .grid-image-link img {
-      width: 100%;
-      display: block;
-      height: auto;
-    }
+        /* Large Square는 2칸 너비에 2칸 높이이므로, padding-bottom 100%로 정사각형 비율 유지 */
+        .large-square::before { padding-bottom: 50%; }
+ /* ================================================= */
+        /* **태블릿 미디어 쿼리 (Tablet: 2열, 3행 구조)** */
+        /* ================================================= */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main-grids {
+                grid-template-columns: repeat(2, 1fr); 
+                grid-template-rows: auto auto auto;
+            }
+            
+            /* Row 1: Item 1, 2 */
+            .item-1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+            .item-2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+            
+            /* Row 2: Item 3, 4 */
+            .item-3 { grid-column: 1 / 2; grid-row: 2 / 3; }
+            .item-4 { grid-column: 2 / 3; grid-row: 2 / 3; }
 
-    /* 제목 스타일 */
-    .grid-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin-top: 15px; 
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    /* 설명 텍스트 스타일 */
-    .grid-description {
-      font-size: 14px;
-      font-weight: 300;
-      margin-bottom: 20px;
-      padding: 0 15px;
-      color: #555;
-    }
-
-    /* 버튼 스타일 (밑줄 스타일) */
-    .grid-button {
-      display: inline-block;
-      color: #333;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      text-decoration: underline;
-      text-transform: uppercase;
-      margin-top: auto; 
-      align-self: center; 
-      padding: 5px 0;
-    }
-
-    .grid-button:hover {
-      opacity: 0.7;
-    }
-  </style>
+            /* Row 3: Large Square (2칸 가로) */
+            .large-square {
+                grid-column: 1 / 3;
+                grid-row: 3 / 4;
+            }
+            
+            /* 🔧 핵심: 태블릿에서 Large Square의 ::before를 100%로 변경 */
+            .large-square::before {
+                padding-bottom: 100% !important;
+            }
+        }
+        /* ================================================= */
+        /* 미디어 쿼리 (반응형: 모바일/태블릿 시 1열로) */
+        /* ================================================= */
+        @media (max-width: 768px) {
+            .main-grids {
+                grid-template-columns: 1fr; /* 1열 */
+                gap: 5px;
+            }
+            /* 모든 아이템의 위치 지정 해제 (순서대로 1열 배치) */
+            .main-grids li { grid-column: auto; grid-row: auto; }
+            .large-square { grid-column: auto; grid-row: auto; }
+            
+            /* 모바일에서는 높이도 가로 너비에 맞춰 100% 유지 */
+            .main-grids li::before { padding-bottom: 100%; } 
+            
+            /* 모바일에서는 텍스트를 항상 보이도록 설정할 수도 있습니다. (선택 사항) */
+            /* .main-grids li .grid-title, .main-grids li .grid-description { opacity: 1; transform: none; color: #333; }
+            .main-grids li .grid-image-link::before { opacity: 0; } */
+        }
+    </style>
 </head>
 <body>
   <section id="mainGridContentBanner">
-    <ul class="main-grids" data-grids-pc="3">
-      <li>
-          <a href="#none" class="grid-image-link">
-              <img src="https://designtemplate.cafe24.com/web/commas/template_sample_images/ravie/_maingridcontentbanner_001.jpg" alt="Mindful makeup.">
-          </a>
-          <a href="#none" class="grid-title">Mindful makeup.</a>
-          <p class="grid-description">Discover multifunctional makeup packed with skin care superstars.</p>
-          <a href="#none" class="grid-button"><span>READ THE LATEST</span></a>
+    <ul class="main-grids">
+      
+<li class="item-1">
+        <a href="#none" class="grid-image-link">
+          <img src="/newfolder/images/mockup/story01.png" alt="Item 1: 1행 1열">
+        </a>
+        <a href="#none" class="grid-title">Item 1 Title</a>
+        <p class="grid-description">좌측 상단 콘텐츠</p>
       </li>
-      <li>
-          <a href="#none" class="grid-image-link">
-              <img src="https://designtemplate.cafe24.com/web/commas/template_sample_images/ravie/_maingridcontentbanner_002.jpg" alt="Follain body care is back">
-          </a>
-          <a href="#none" class="grid-title">Follain body care is back</a>
-          <p class="grid-description">Nourishing clean formulas to support your body, mind, and spirit—now in more sustainable packaging.</p>
-          <a href="#none" class="grid-button"><span>SHOP NOW</span></a>
+
+      
+<li class="item-2">
+        <a href="#none" class="grid-image-link">
+          <img src="/newfolder/images/mockup/story04.png" alt="Item 2: 1행 2열">
+        </a>
+        <a href="#none" class="grid-title">Item 2 Title</a>
+        <p class="grid-description">우측 상단 콘텐츠</p>
       </li>
-      <li>
-          <a href="#none" class="grid-image-link">
-              <img src="https://designtemplate.cafe24.com/web/commas/template_sample_images/ravie/_maingridcontentbanner_003.jpg" alt="Follain body care is back">
-          </a>
-          <a href="#none" class="grid-title">Follain body care is back</a>
-          <p class="grid-description">Nourishing clean formulas to support your body, mind, and spirit—now in more sustainable packaging.</p>
-          <a href="#none" class="grid-button"><span>SHOP NOW</span></a>
+      
+      
+<li class="item-3">
+        <a href="#none" class="grid-image-link">
+          <img src="/newfolder/images/mockup/story03.png" alt="Item 3: 2행 1열">
+        </a>
+        <a href="#none" class="grid-title">Item 3 Title</a>
+        <p class="grid-description">좌측 하단 콘텐츠</p>
+      </li>
+
+      
+<li class="item-4">
+        <a href="#none" class="grid-image-link">
+          <img src="/newfolder/images/mockup/story05.png" alt="Item 4: 2행 2열">
+        </a>
+        <a href="#none" class="grid-title">Item 4 Title</a>
+        <p class="grid-description">우측 하단 콘텐츠</p>
+      </li>
+      
+      
+<li class="large-square">
+        <a href="#none" class="grid-image-link">
+            <img src="/newfolder/images/mockup/story02.png" alt="Large Square">
+        </a>
+        <a href="#none" class="grid-title">Large Square Title</a>
+        <p class="grid-description">오른쪽 2x2 대형 콘텐츠</p>
       </li>
     </ul>
   </section>

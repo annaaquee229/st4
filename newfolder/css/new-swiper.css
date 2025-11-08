@@ -5,6 +5,7 @@
       scroll-snap-type: y mandatory;
       position: relative;
       background-color: #f383a7;
+      transform: translateY(-19px);
     }
 
     /* 슬라이더 내부 스크롤 컨테이너 */

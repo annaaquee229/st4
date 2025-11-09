@@ -1,3 +1,4 @@
+
 #mainGridContentBanner {
   width: 100vw;
   padding-top:70px;
@@ -39,29 +40,26 @@
   /* 너비 대비 100% 높이 (정사각형) */
 }
 
-/* 이미지 컨테이너 */
+/* 이미지와 링크 컨테이너 */
 .main-grids li .grid-image-link {
+
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: block;
 }
 
-/* 이미지 스타일 */
 .main-grids li img {
-  position: absolute;
-  top: 0;
-  left: 0;
+
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-/* 호버 오버레이 - ::after로 변경 */
-.main-grids li .grid-image-link::after {
+/* 호버 오버레이 */
+.main-grids li .grid-image-link::before {
   content: '';
   position: absolute;
   top: 0;
@@ -69,44 +67,40 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.45);
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 10;
-  pointer-events: none;
 }
 
-/* 텍스트 요소들 (숨김 - 하단 왼쪽 정렬) */
+/* 텍스트 요소들 (숨김) */
 .main-grids li .grid-title,
 .main-grids li .grid-description {
   position: absolute;
-  left: 0;
-  width: 100%;
-  padding: 10px 15px;
-  text-align: left;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  width: 90%;
+  text-align: center;
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
   color: #ffffff;
   z-index: 20;
   text-decoration: none;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.7);
-  transform: translateY(20px);
 }
 
 .main-grids li .grid-title {
-  bottom: 40px;
+  top: 40%;
   font-size: 1.1em;
   font-weight: bold;
 }
 
 .main-grids li .grid-description {
-  bottom: 10px;
+  top: 60%;
   font-size: 0.8em;
 }
 
 /* 호버 시 효과 */
-.main-grids li:hover .grid-image-link::after {
-  opacity: 0;
+.main-grids li:hover .grid-image-link::before {
+  opacity: 1;
 }
 
 .main-grids li:hover img {
@@ -116,7 +110,7 @@
 .main-grids li:hover .grid-title,
 .main-grids li:hover .grid-description {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 /* ================================================= */
@@ -240,5 +234,4 @@
   margin: 0 !important;
   padding: 0 !important;
         background-color: #2d2d2d;
-      transform: translateY(-19px);
-}
+      transform: translateY(-19px);}

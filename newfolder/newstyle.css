@@ -170,8 +170,8 @@ bottom:10px;
 
 @media (min-width: 1024px) {
     #contents > .section_full_content_center > div{
-        max-width: 1230px;
-        width: 92%;
+        max-width: 100vw;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -187,8 +187,8 @@ bottom:10px;
 
 @media (min-width: 1024px) {
     #contents > .section_full_only_content > .main_title{
-        max-width: 1230px;
-        width: 92%;
+        max-width: 100vw;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -784,3 +784,6 @@ swiper controls가 슬라이드 아래 표시 (.ub-swiper-controls-bottom) - **�
       no-repeat center center / 70vw auto;
       padding:5rem 1rem 3rem;}
     
+      .section .visual-section .full-width-wrapper02{
+        background-color: #2d2d2d;
+      }

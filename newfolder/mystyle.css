@@ -242,8 +242,8 @@ main_title이 content 너비 범위에서 left/center/right 정렬
 
 @media (min-width: 1024px) {
     #contents > .section_full_content_center > div{
-        max-width: 1230px;
-        width: 92%;
+        max-width: 100vw;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -265,8 +265,8 @@ main_title이 content 너비 범위에서 left/center/right 정렬
 
 @media (min-width: 1024px) {
     #contents > .section_full_only_content > .main_title{
-        max-width: 1230px;
-        width: 92%;
+        max-width: 100vw;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -856,3 +856,6 @@ content_list
     .df-bannermanager div[df-banner-clone] iframe{
       display: block; width: 100%; height: 100%;
     }
+   .section .visual-section .full-width-wrapper02{
+        background-color: #2d2d2d;
+      }

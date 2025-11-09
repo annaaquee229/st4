@@ -2,10 +2,8 @@
   ** 전체 스타일 초기화 **
 */
 
-.section {
-    background-color: transparent;}
-    
-#mainGridContentBanner02 * {
+
+#mainGridContentBanner02 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -19,35 +17,35 @@
   margin: 0 auto;
   padding: 50px 15px; 
   /* 배경색을 섹션 ID에 직접 적용하여 안정화 */
-  background-color: #f7f3e8 !important; 
+  background-color: #f7f3e8; 
 }
 
 /*
   ** 4단 그리드 리스트 스타일 **
 */
 .main-grids02 {
-  display: grid !important;
-  gap: 0; 
+  display: grid;
+  gap: 30px; /* 카드 간 여백 추가 */
   list-style: none;
   padding: 0;
 }
 
 /* 모바일 기본: 1열 */
 .main-grids02 {
-  grid-template-columns: repeat(1, 1fr) !important;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 /* 태블릿 (예: 768px 이상): 2열 */
 @media (min-width: 768px) {
   .main-grids02 {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* PC (예: 1024px 이상): 4열 - !important로 강제 적용 */
+/* PC (예: 1024px 이상): 4열 */
 @media (min-width: 1024px) {
   .main-grids02 {
-    grid-template-columns: repeat(4, 1fr) !important; 
+    grid-template-columns: repeat(4, 1fr); 
   }
 }
 

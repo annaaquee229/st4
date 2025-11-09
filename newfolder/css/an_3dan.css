@@ -1,18 +1,21 @@
 
 #mainGridContentBanner {
-  
+  width: 100vw;
+  padding-top:70px;
   margin: 0;
+  padding: 200px 0;
   background-color: #2d2d2d;
-transform: translateY(-19px);
+    transform: translateY(-19px) translateX(-320px);
 
 }
 
 .main-grids {
-  max-width: 1200px;
+  max-width: 1240px;
   list-style: none;
   padding: 0;
   margin: 0 auto;
   display: grid;
+  gap:6px;
   /* 4열 설정 (1fr씩 균등 분할) */
   grid-template-columns: repeat(4, 1fr);
   /* 2행 설정 */
@@ -227,6 +230,7 @@ transform: translateY(-19px);
 
 
 .full-width-wrapper02{
+  width:100vw !important;
   margin: 0 !important;
   padding: 0 !important;
         background-color: #2d2d2d;

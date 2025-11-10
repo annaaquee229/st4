@@ -1,64 +1,57 @@
- /* 기본 스타일 초기화 */
-        .section-kim {
+     /* 1. **강력한 초기화**: 모든 요소의 기본 여백(margin/padding) 제거 및 box-sizing 설정 */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* HTML과 body가 전체 뷰포트를 차지하도록 설정 */
-        .secion #section_full_kim {
-            height: 50% !important;
-            width: 100% !important;
-            overflow: hidden; /* 스크롤 방지 */
+        /* 2. **body와 html 초기화**: 너비 100% 설정 */
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
         }
 
-        /* 1. 전체 화면 섹션 (.section_full) */
-        .section_full_kim{
-            background-size: 400px 400px;
-            margin: 0;
-            padding: 0;
-            /* 뷰포트 전체 크기 */
-            width: 100vw;
-            height: auto;
-            /* 배경색 지정 (원본 이미지의 분홍색 계열) */
+        /* 3. 섹션 컨테이너 (section-kim) */
+        .section-kim {
+            /* 100%로 설정하여 섹션이 body의 너비를 따라가도록 함 */
+            width: 100%; 
+            background-color:#f38d9e ;
+            transform: translateY(-19px);
+            
+        }
+
+        /* 4. **메인 섹션 (Full Width & 400px Height)** */
+        .section_full_kim {
+            /* ❗ **핵심 수정**: width: 100vw를 사용하여 뷰포트 너비를 강제로 꽉 채웁니다. */
+            width: 100%; 
+            height: 400px; /* 요청하신 높이 400px 고정 */
+            
+            /* 배경색 (핑크색 계열) */
             background-color: #f38d9e; 
             
-            /* 내부 요소(ul) 중앙 배치 */
+            /* 내부 요소(이미지) 중앙 배치 */
             display: flex;
             justify-content: center; /* 가로 중앙 정렬 */
-            align-items: top /* 세로 중앙 정렬 */
-           
+            align-items: center; /* 수직 중앙 정렬 */
+
+            /* 100vw 사용 시 발생하는 스크롤바를 방지하기 위해 body/html에 overflow-x: hidden 설정됨 */
         }
 
-        /* 2. UL 컨테이너 (ul.title) */
-        /* ul이 이미지와 텍스트를 담고 있으며, Flexbox 아이템으로 중앙에 배치됨 */
-        .section_full_kim > ul {
-      background-attachment: static;
-          width:50%;
-          height:50%;
+        /* 5. UL 컨테이너 (이미지를 담는 컨테이너) */
+        .title_kim {
             list-style: none;
             padding: 0;
             margin: 0;
-          
-            /* 내용(li와 img)을 세로로 중앙 정렬하기 위해 Flexbox 사용 */
             display: flex;
             align-items: center; 
-            
-            /* 이미지 크기 제한을 위해 최대 크기 지정 */
-            max-width: 300px; 
-            max-height: 300px;  
-
+            justify-content: center; 
         }
 
-    
-
-        /* 4. GIF 이미지 (.section_full img) - 반응형 설정 */
-        .section_full_kim > ul > img {
-            /* 부모(ul)의 최대 크기에 맞춰 이미지 크기 조절 */
-            max-width: 100%; 
-            max-height: 100%;
-            /* 이미지의 원래 종횡비를 유지하며 크기 조절 */
-            height: auto; 
-            width: auto;
+        /* 6. 이미지 스타일 (100px x 100px) */
+        .title_kim img {
+            width: 140px; 
+            height: 140px;
+            object-fit: contain; 
             display: block;
         }

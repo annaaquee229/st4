@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Section - Full Width Image Focus</title>
+    <style>
+        /* 1. **강력한 초기화**: 모든 요소의 기본 여백(margin/padding) 제거 및 box-sizing 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 2. **body와 html 초기화**: 너비 100% 설정 */
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
+        }
+
+        /* 3. 섹션 컨테이너 (section-kim) */
+        .section-kim {
+            /* 100%로 설정하여 섹션이 body의 너비를 따라가도록 함 */
+            width: 100%; 
+            background-color:#f38d9e ;
+        }
+
+        /* 4. **메인 섹션 (Full Width & 400px Height)** */
+        .section_full_kim {
+            /* ❗ **핵심 수정**: width: 100vw를 사용하여 뷰포트 너비를 강제로 꽉 채웁니다. */
+            width: 100vw; 
+            height: 400px; /* 요청하신 높이 400px 고정 */
+            
+            /* 배경색 (핑크색 계열) */
+            background-color: #f38d9e; 
+            
+            /* 내부 요소(이미지) 중앙 배치 */
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+
+            /* 100vw 사용 시 발생하는 스크롤바를 방지하기 위해 body/html에 overflow-x: hidden 설정됨 */
+        }
+
+        /* 5. UL 컨테이너 (이미지를 담는 컨테이너) */
+        .title_kim {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        /* 6. 이미지 스타일 (100px x 100px) */
+        .title_kim img {
+            width: 100px; 
+            height: 100px;
+            object-fit: contain; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section-kim">
+    <section class="section-kim-kim" id="section_full_kim">
+        <ul class="title_kim"> 
+            <img src="/newfolder/images/kim01.gif" alt="gif-kim">
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>

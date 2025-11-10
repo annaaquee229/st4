@@ -1,13 +1,19 @@
+
+
 #mainGridContentBanner {
-  width: 100vw;
+
+  width: 100%;
   padding-top:70px;
   margin: 0;
   padding: 200px 0;
   background-color: #2d2d2d;
-    transform: translateY(-19px) translateX(-320px);
+    transform: translateY(-19px);
 
 }
-
+.seciton .section_full{
+    width: 100% !important;
+    max-width: 100% !important;
+}
 .main-grids {
   max-width: 1240px;
   list-style: none;
@@ -167,7 +173,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto;
   }
-
+@media (min-width: 1024px) {
+    #contents > .section_full_mainGridContentBanner{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
   /* Row 1: Item 1, 2 */
   .item-1 {
     grid-column: 1 / 2;

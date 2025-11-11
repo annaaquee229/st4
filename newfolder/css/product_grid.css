@@ -51,7 +51,7 @@
     /* 썸네일 영역 */
     .an_-thumb {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 0;
       overflow: hidden;
       background-color: transparent;
       aspect-ratio: 1 / 1;
@@ -67,8 +67,8 @@
     }
 
     .an_-thumb img {
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }

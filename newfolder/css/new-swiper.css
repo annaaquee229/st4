@@ -10,7 +10,7 @@
 /* 고정 헤더 (슬라이더 섹션 내에서만 고정) */
 .fixed-header-box {
   position: sticky;
-  top: 150px;
+  top: 90px;
   left: 5vw;
   padding: 40px 0;
   z-index: 9999;
@@ -71,7 +71,7 @@
 .item-visual {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 33%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -90,8 +90,8 @@
 /* 텍스트 영역 */
 .item-content {
   position: absolute;
-  top: 50%;
-  right: 10vw;
+  top: 33%;
+  right: 3vw;
   transform: translateY(-50%);
   width: 25vw;
   max-width: 350px;

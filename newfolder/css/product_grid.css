@@ -5,24 +5,47 @@
 
     /* ********* 새로 추가된 타이틀 영역 스타일 ********* */
     .an_section-header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 40px; /* 상품 리스트와의 간격 */
       padding-top: 100px;
       padding-bottom:80px;
+      padding-left:0;
     }
 
+    /* [핵심] 로고와 텍스트 블록 전체를 가로로 정렬 */
+    .an_--with-logo {
+        display: flex;
+        align-items: center; /* 로고와 텍스트 블록을 수직 가운데 정렬 */
+    }
+    
+    /* 로고 이미지 스타일 */
+    .an_-header-logo {
+        height: 50px; /* 로고 크기 설정 (원하는 크기로 조정 가능) */
+        width: auto;
+        margin-right: 15px; /* 로고와 텍스트 사이의 간격 */
+        flex-shrink: 0;
+    }
+    
+    /* 텍스트 2단 블록을 감싸는 컨테이너 */
+    .an_-text-wrap {
+        line-height: 1; /* 텍스트 뭉침을 위해 라인 높이 조정 */
+    }
+
+    /* 메인 타이틀 */
     .an_-main-title {
       font-size: 30px;
       font-weight: 700;
       color: #2c2c2c;
-      margin-bottom: 8px;
+      margin-bottom: 4px; /* 메인 타이틀과 서브 타이틀 사이의 간격 조정 */
+      line-height: 1; /* 줄 높이 최소화 */
     }
 
+    /* 서브 타이틀 */
     .an_-sub-title {
       font-size: 16px;
       font-weight: 400;
       color: #666;
-      line-height: 1.5;
+      line-height: 1; /* 줄 높이 최소화 */
     }
     /* ************************************************* */
 
@@ -166,8 +189,17 @@
         font-size: 11px;
       }
       
+      /* 로고 옆 텍스트 정렬 */
       .an_-main-title {
-        font-size: 26px; /* 모바일/태블릿에서 타이틀 크기 조정 */
+        font-size: 26px;
+      }
+      
+      .an_-header-logo {
+          height: 40px;
+      }
+      
+      .an_-sub-title {
+          font-size: 15px;
       }
     }
 
@@ -195,12 +227,18 @@
         margin-bottom: 15px;
       }
       
+      /* 로고 옆 텍스트 정렬 */
       .an_-main-title {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .an_-sub-title {
-        font-size: 14px;
+        font-size: 13px;
+      }
+      
+      .an_-header-logo {
+          height: 30px;
+          margin-right: 10px;
       }
     }
 

@@ -5,6 +5,7 @@
   background-color: #f383a7;
   transform: translateY(-19px);
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
 /* 고정 헤더 (슬라이더 섹션 내에서만 고정) */
@@ -124,8 +125,8 @@
 }
 
 .slider-section-wrapper .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+  width: 5px;
+  height: 5px;
   background-color: rgba(255, 255, 255, 0.5);
   opacity: 1;
   margin: 8px 0 !important;

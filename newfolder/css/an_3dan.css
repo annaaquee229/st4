@@ -133,34 +133,51 @@
 }
 
 /* 텍스트 요소들 (숨김 - 하단 왼쪽 정렬) */
-.main-grids li .grid-title,
-.main-grids li .grid-description {
+/* 1. 부모가 되는 li에 기준점 설정 */
+.main-grids li {
+  position: relative;
+  overflow: hidden; /* 영역 밖으로 나가는 애니메이션 숨김 */
+}
+
+/* 2. 제목과 설명을 감싸는 박스 스타일 */
+.main-grids li .grid-info-box {
   position: absolute;
   left: 0;
+  bottom: 0;        /* 바닥에 붙임 */
   width: 100%;
-  padding: 10px 15px;
-  text-align: left;
-  opacity: 0; /* 평소에는 숨김 */
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  color: #ffffff;
-  z-index: 20;
-  text-decoration: none;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.7); /* 검은색 텍스트 배경 박스 */
+  padding: 20px 15px; /* 전체 박스의 여백 */
+  background-color: rgba(0, 0, 0, 0.7); /* 배경은 여기서 한 번만! */
+  
+  /* 애니메이션 설정 */
+  opacity: 0;
   transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 20;
+  pointer-events: none;
 }
 
+/* 3. 호버 시 박스 전체가 나타남 */
+.main-grids li:hover .grid-info-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. 내부 요소 스타일 (배경/위치값 제거) */
 .main-grids li .grid-title {
-  bottom: 40px;
+  display: block;
+  color: #ffffff;
   font-size: 1.1em;
   font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px; /* 제목과 설명 사이 간격 */
 }
 
 .main-grids li .grid-description {
-  bottom: 10px;
+  margin: 0;
+  color: #ffffff;
   font-size: 0.8em;
+  opacity: 0.8; /* 설명은 살짝 흐리게 가독성 조절 */
 }
-
 /* 호버 시 효과 */
 .main-grids li:hover .grid-image-link::after {
   opacity: 0; /* 검은색 오버레이 제거 */

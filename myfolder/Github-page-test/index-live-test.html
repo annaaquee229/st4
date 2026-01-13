@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포트폴리오 - 통합 버전</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 200px;
+      background: rgba(10, 10, 10, 0.2);
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    header nav ul {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #000;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .main-wrapper {
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+
+    .main-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .outer-section {
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      position: relative;
+    }
+
+    /* X축 슬라이드 */
+    .section-x {
+      background: #eee;
+      overflow: hidden;
+    }
+
+    .x-slider-container {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .x-slide {
+      width: 100vw;
+      height: 100%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 500px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      z-index: 100;
+      border-radius: 50%;
+    }
+
+    .prev {
+      left: 30px;
+    }
+
+    .next {
+      right: 30px;
+    }
+
+    .section-full {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .content-box {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      max-width: 800px;
+      transform: translateX(-300px);
+    }
+
+    .main-title {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .x-text {
+      margin-bottom: 40px;
+      padding-left: 20px;
+    }
+
+    .x-text ul {
+      list-style: none;
+    }
+
+    .x-text ul li {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.8;
+      padding: 0.2rem 0;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .view-btn {
+      display: inline-flex;
+      padding: 12px 40px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* 내비바 + 자동재생 버튼 컨테이너 */
+    .x-nav-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .x-nav-wrapper {
+      width: 150px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .x-nav-bar {
+      width: 33.33%;
+      height: 100%;
+      background: #fff;
+      transition: transform 0.5s;
+    }
+
+    .play-pause-btn {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 10px;
+      border-radius: 50%;
+    }
+
+    /* 기타 섹션 스타일 생략 (기존 유지) */
+    .bg-y1 {
+      background: #6c5ce7;
+    }
+
+    .bg-y2 {
+      background: #a29bfe;
+    }
+
+    .bg-y3 {
+      background: #dfe6e9;
+      color: #333;
+    }
+
+    .inner-scroll-box {
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+
+    .inner-slide {
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: #fff;
+    }
+
+    .section-grid {
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 90%;
+      height: 60%;
+    }
+
+    .grid-cell {
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+    }
+
+    .section-footer-area {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      color: #fff;
+    }
+
+    footer {
+      width: 100%;
+      height: 200px;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">ANNETIQUE STUDIO</div>
+    <nav>
+      <ul>
+        <li><a href="works.html">WORKS</a></li>
+        <li><a href="concept.html">CONCEPT</a></li>
+        <li><a href="skills.html">SKILLS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-wrapper" id="outerContainer">
+    <section class="outer-section section-x">
+      <button class="arrow prev" onclick="moveX(-1)">&#10094;</button>
+      <button class="arrow next" onclick="moveX(1)">&#10095;</button>
+
+      <div class="x-slider-container" id="xSlider">
+        <div class="x-slide section-full" style="background-image: url('https://picsum.photos/id/10/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">INFINITY VISION</h2>
+            <div class="x-text">
+              <ul>
+                <li>테스트1줄입니다</li>
+                <li>테스트2줄입니다</li>
+                <li>테스트3줄입니다</li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <a href="works.html" class="view-btn">PROJECT VIEW</a>
+              <div class="x-nav-container">
+                <div class="x-nav-wrapper">
+                  <div class="x-nav-bar" id="xNavBar"></div>
+                </div>
+                <button class="play-pause-btn" onclick="toggleAutoPlay()">
+                  <span id="playIcon">II</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="x-slide section-full" style="background-image: url('https://picsum.photos/id/42/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">ANNETIQUE STYLE</h2>
+            <div class="x-text">
+              <ul>
+                <li>미니멀리즘 기반의 정제된 디자인</li>
+                <li>사용자 중심의 인터랙티브 경험</li>
+                <li>브랜드의 가치를 시각적으로 극대화</li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <a href="concept.html" class="view-btn">CONCEPT VIEW</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="x-slide section-full" style="background-image: url('https://picsum.photos/id/48/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">SKILL SET</h2>
+            <div class="x-text">
+              <ul>
+                <li>HTML5 / CSS3 / Modern JS</li>
+                <li>UI & UX Design Optimization</li>
+                <li>Responsive Web Development</li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <a href="skills.html" class="view-btn">SKILLS VIEW</a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="outer-section">
+      <div class="inner-scroll-box" id="innerScroll">
+        <div class="inner-slide bg-y1">VERTICAL 01</div>
+        <div class="inner-slide bg-y2">VERTICAL 02</div>
+        <div class="inner-slide bg-y3">VERTICAL 03</div>
+      </div>
+    </section>
+
+    <section class="outer-section section-grid">
+      <div class="grid-container">
+        <div class="grid-cell">COLUMN 01</div>
+        <div class="grid-cell">COLUMN 02</div>
+        <div class="grid-cell">COLUMN 03</div>
+        <div class="grid-cell">COLUMN 04</div>
+      </div>
+    </section>
+
+    <section class="outer-section section-footer-area">
+      <footer>
+        <div class="footer-logo">ANNETIQUE STUDIO</div>
+        <div class="footer-info">
+          <p>&copy; 2026 Annetique Portfolio. All rights reserved.</p>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    let currentX = 0;
+    const totalXSlides = 3;
+    const xSlider = document.getElementById('xSlider');
+    const xNavBar = document.getElementById('xNavBar');
+    const playIcon = document.getElementById('playIcon');
+
+    let autoPlayInterval;
+    let isPlaying = true;
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => { moveX(1); }, 4000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    function toggleAutoPlay() {
+      if (isPlaying) {
+        stopAutoPlay();
+        playIcon.innerText = "▶";
+      } else {
+        startAutoPlay();
+        playIcon.innerText = "II";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    function updateX() {
+      xSlider.style.transform = `translateX(-${currentX * 100}vw)`;
+      if (xNavBar) {
+        xNavBar.style.transform = `translateX(${currentX * 100}%)`;
+      }
+    }
+
+    function moveX(dir) {
+      currentX += dir;
+      if (currentX < 0) currentX = totalXSlides - 1;
+      else if (currentX >= totalXSlides) currentX = 0;
+      updateX();
+      if (isPlaying) {
+        stopAutoPlay();
+        startAutoPlay();
+      }
+    }
+
+    window.onload = startAutoPlay;
+
+    const innerScroll = document.getElementById('innerScroll');
+    if (innerScroll) {
+      innerScroll.addEventListener('wheel', (e) => {
+        const scrollTop = innerScroll.scrollTop;
+        const scrollHeight = innerScroll.scrollHeight;
+        const height = innerScroll.offsetHeight;
+        if (e.deltaY < 0 && scrollTop <= 0) return;
+        if (e.deltaY > 0 && scrollTop + height < scrollHeight - 5) {
+          e.stopPropagation();
+        }
+      }, { passive: false });
+    }
+  </script>
+</body>
+
+</html>

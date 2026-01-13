@@ -1,0 +1,269 @@
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 헤더 스타일 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* 메인 스냅 컨테이너 */
+.main-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.main-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.outer-section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* X축 슬라이더 */
+.section-x {
+  background: #111;
+  overflow: hidden;
+}
+
+.x-slider-container {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.x-slide {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+}
+
+.section-full {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* 텍스트 컨텐츠 */
+.content-box {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* li 점 제거 및 스타일링 */
+.x-text {
+  margin-bottom: 40px;
+}
+
+.x-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.x-text li {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  border-left: 2px solid #fff;
+  padding-left: 15px;
+}
+
+/* 버튼 및 내비바 */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.view-btn {
+  display: inline-flex;
+  padding: 12px 40px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.x-nav-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.x-nav-wrapper {
+  width: 150px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.x-nav-bar {
+  width: 33.33%;
+  height: 100%;
+  background: #fff;
+  transition: transform 0.5s;
+}
+
+.play-pause-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+/* 화살표 */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: #fff;
+  color: #000;
+}
+
+.prev {
+  left: 40px;
+}
+
+.next {
+  right: 40px;
+}
+
+/* 푸터 섹션 */
+.section-footer-area {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.contact-text {
+  margin-top: auto;
+  padding-bottom: 100px;
+  font-size: 4rem;
+  font-weight: 900;
+  opacity: 0.1;
+}
+
+footer {
+  width: 100%;
+  padding: 60px 0;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #222;
+}
+
+.footer-logo {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.footer-info {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.6;
+}

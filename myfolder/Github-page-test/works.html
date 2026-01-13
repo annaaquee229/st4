@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WORKS - ANNETIQUE STUDIO</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="works_style.css">
 </head>
-
 <body>
+
   <header>
     <div class="logo">ANNETIQUE STUDIO</div>
     <nav>
       <ul>
         <li><a href="index.html">HOME</a></li>
         <li><a href="works.html">WORKS</a></li>
+        <li><a href="concept.html">CONCEPT</a></li>
         <li><a href="skills.html">SKILLS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
       </ul>
     </nav>
   </header>
-  <div class="inner-scroll-box" id="innerScroll">
-    <div class="inner-slide bg-y1">VERTICAL 01</div>
-    <div class="inner-slide bg-y2">VERTICAL 02</div>
-    <div class="inner-slide bg-y3">VERTICAL 03</div>
-  </div>
-  <script src="script.js"></script>
-</body>
 
+  <main class="works-wrapper">
+    <div class="section-header">
+      <div class="header-text">
+        <h2>STORY ARCHIVE</h2>
+        <p>다양한 ANNETIQUE의 프로젝트 이야기</p>
+      </div>
+    </div>
+
+    <ul class="works-grid" id="worksGrid">
+      </ul>
+
+    <div class="more-container">
+      <button class="more-btn" id="moreBtn">
+        <span id="btnText">MORE WORKS</span>
+        <span class="material-icons">expand_more</span>
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-logo">ANNETIQUE STUDIO</div>
+    <p>&copy; 2026 Annetique Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="works_script.js"></script>
+</body>
 </html>

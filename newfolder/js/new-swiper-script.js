@@ -1,82 +1,65 @@
+const swiper = new Swiper('.mySwiper', {
+  direction: 'vertical',
+  slidesPerView: 1,
+  speed: 800,
+  mousewheel: {
+    releaseOnEdges: true,
+    sensitivity: 1,
+  },
+  keyboard: {
+    enabled: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const wrapper = document.querySelector('.ub-wrapper');
-      const list = document.querySelector('.content-list');
-      const items = document.querySelectorAll('.list-item');
-      const dots = document.querySelectorAll('.scroll-dot');
-      const totalItems = items.length;
-      let currentIndex = 0;
-      let isScrolling = false;
-      let itemHeight = wrapper.clientHeight;
+// 섹션 내에서 스크롤 제어
+const sliderSection = document.querySelector('.slider-section-wrapper');
+let isInSection = false;
 
-      function setHeight() {
-        itemHeight = wrapper.clientHeight;
-        list.style.height = `${itemHeight * totalItems}px`;
-        items.forEach(item => {
-          item.style.height = `${itemHeight}px`;
-        });
-      }
+// Swiper 내부에서 휠 이벤트 감지
+const swiperEl = document.querySelector('.mySwiper');
 
-      function goToSlide(index) {
-        if (index >= 0 && index < totalItems) {
-          currentIndex = index;
-          const offset = -currentIndex * itemHeight;
-          list.style.transform = `translateY(${offset}px)`;
-          
-          // 인디케이터 업데이트
-          dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-          });
-        }
-      }
+if (swiperEl) {
+  swiperEl.addEventListener('wheel', (e) => {
+    const isFirstSlide = swiper.activeIndex === 0;
+    const isLastSlide = swiper.activeIndex === swiper.slides.length - 1;
+    
+    // 첫 슬라이드에서 위로 스크롤 시에만 섹션 나가기 허용
+    if (isFirstSlide && e.deltaY < 0) {
+      return;
+    }
+    
+    // 마지막 슬라이드에서 아래로 스크롤 시에만 섹션 나가기 허용
+    if (isLastSlide && e.deltaY > 0) {
+      return;
+    }
+    
+    // 그 외의 경우 페이지 스크롤 방지
+    e.preventDefault();
+    e.stopPropagation();
+  }, { passive: false });
+}
 
-      // 마우스 휠 이벤트
-      wrapper.addEventListener('wheel', function(e) {
-        if (isScrolling) {
-          e.preventDefault();
-          return;
-        }
+// 섹션 진입 감지
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+};
 
-        let nextIndex = currentIndex;
-        let canTransition = false;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      isInSection = true;
+    } else {
+      isInSection = false;
+    }
+  });
+}, observerOptions);
 
-        if (e.deltaY > 0) {
-          if (currentIndex < totalItems - 1) {
-            nextIndex = currentIndex + 1;
-            canTransition = true;
-          }
-        } else {
-          if (currentIndex > 0) {
-            nextIndex = currentIndex - 1;
-            canTransition = true;
-          }
-        }
-
-        if (canTransition) {
-          e.preventDefault();
-          isScrolling = true;
-          goToSlide(nextIndex);
-          setTimeout(() => {
-            isScrolling = false;
-          }, 500);
-        }
-      });
-
-      // 인디케이터 클릭
-      dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-          const index = parseInt(this.dataset.index);
-          goToSlide(index);
-        });
-      });
-
-      // 리사이즈
-      window.addEventListener('resize', function() {
-        setHeight();
-        goToSlide(currentIndex);
-      });
-
-      // 초기화
-      setHeight();
-      goToSlide(0);
-    });
+if (sliderSection) {
+  observer.observe(sliderSection);
+}

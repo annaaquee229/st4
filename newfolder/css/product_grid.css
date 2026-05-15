@@ -1,0 +1,258 @@
+.an_xans-product-listmain {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ********* 새로 추가된 타이틀 영역 스타일 ********* */
+    .an_section-header {
+      text-align: left;
+      margin-bottom: 40px; /* 상품 리스트와의 간격 */
+      padding-top: 100px;
+      padding-bottom:80px;
+      padding-left:0;
+    }
+
+    /* [핵심] 로고와 텍스트 블록 전체를 가로로 정렬 */
+    .an_--with-logo {
+        display: flex;
+        align-items: center; /* 로고와 텍스트 블록을 수직 가운데 정렬 */
+    }
+    
+    /* 로고 이미지 스타일 */
+    .an_-header-logo {
+        height: 50px; /* 로고 크기 설정 (원하는 크기로 조정 가능) */
+        width: auto;
+        margin-right: 15px; /* 로고와 텍스트 사이의 간격 */
+        flex-shrink: 0;
+    }
+    
+    /* 텍스트 2단 블록을 감싸는 컨테이너 */
+    .an_-text-wrap {
+        line-height: 1; /* 텍스트 뭉침을 위해 라인 높이 조정 */
+    }
+
+    /* 메인 타이틀 */
+    .an_-main-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #2c2c2c;
+      margin-bottom: 4px; /* 메인 타이틀과 서브 타이틀 사이의 간격 조정 */
+      line-height: 1; /* 줄 높이 최소화 */
+    }
+
+    /* 서브 타이틀 */
+    .an_-sub-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: #666;
+      line-height: 1; /* 줄 높이 최소화 */
+    }
+    /* ************************************************* */
+
+    /* 그리드 레이아웃 */
+    .an_--grids {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 80px 50px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+    }
+
+    /* 상품 아이템 */
+    .an_themePrdItems {
+      background-color: transparent;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .an_themePrdItems:hover {
+      transform: translateY(-5px);
+    }
+
+    /* 썸네일 영역 */
+    .an_-thumb {
+      position: relative;
+      margin-bottom: 0;
+      overflow: hidden;
+      background-color: transparent;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .an_-thumb_link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .an_-thumb img {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .an_themePrdItems:hover .an_-thumb img {
+      transform: scale(1.05);
+    }
+
+    /* 정보 영역 */
+    .an_-info {
+      text-align: center;
+    }
+
+    .an_-name {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .an_-name:hover {
+      color: #666;
+    }
+
+    .an_-summary {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    .an_-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 가격 영역 */
+    .an_-price-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .an_-original-price {
+      font-size: 12px;
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .an_-sale-badge {
+      display: inline-block;
+      background-color: #A8B5A0;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .an_-price {
+      font-size: 14px;
+      color: #2c2c2c;
+      font-weight: 600;
+    }
+
+    /* 할인 상품 스타일 */
+    .an_--saled1 .an_-price {
+      color: #8B4513;
+      font-weight: 700;
+    }
+
+    /* 태블릿 */
+    @media (max-width: 1024px) {
+      .an_--grids {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 15px;
+      }
+
+      .an_-name {
+        font-size: 15px;
+      }
+
+      .an_-desc {
+        font-size: 11px;
+      }
+      
+      /* 로고 옆 텍스트 정렬 */
+      .an_-main-title {
+        font-size: 26px;
+      }
+      
+      .an_-header-logo {
+          height: 40px;
+      }
+      
+      .an_-sub-title {
+          font-size: 15px;
+      }
+    }
+
+    /* 모바일 */
+    @media (max-width: 768px) {
+      .an_--grids {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 10px;
+      }
+
+      .an_-name {
+        font-size: 14px;
+      }
+
+      .an_-summary,
+      .an_-desc {
+        font-size: 11px;
+      }
+
+      .an_-price {
+        font-size: 13px;
+      }
+
+      .an_-thumb {
+        margin-bottom: 15px;
+      }
+      
+      /* 로고 옆 텍스트 정렬 */
+      .an_-main-title {
+        font-size: 20px;
+      }
+
+      .an_-sub-title {
+        font-size: 13px;
+      }
+      
+      .an_-header-logo {
+          height: 30px;
+          margin-right: 10px;
+      }
+    }
+
+    /* 작은 모바일 */
+    @media (max-width: 480px) {
+      .an_--grids {
+        gap: 20px 8px;
+      }
+
+      .an_-name {
+        font-size: 13px;
+      }
+
+      .an_-desc {
+        -webkit-line-clamp: 3;
+      }
+    }

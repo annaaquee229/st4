@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS - ANNETIQUE STUDIO</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="works_style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">ANNETIQUE STUDIO</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="works.html">WORKS</a></li>
+        <li><a href="concept.html">CONCEPT</a></li>
+        <li><a href="skills.html">SKILLS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="works-wrapper">
+    <div class="section-header">
+      <h2>STORY ARCHIVE</h2>
+      <p>다양한 프로젝트를 21개의 아카이브로 확인하세요.</p>
+    </div>
+
+    <ul class="works-grid" id="worksGrid"></ul>
+
+    <div class="more-container">
+      <button class="more-btn" id="moreBtn">
+        <span id="btnText">MORE WORKS</span>
+        <span class="material-icons">expand_more</span>
+      </button>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="workModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn">
+        <span class="material-icons">close</span>
+      </button>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="Popup Image">
+        </div>
+        <div class="modal-txt-wrap">
+          <h3 id="modalTitle">Project Title</h3>
+          <p id="modalDesc">Project Description</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">ANNETIQUE STUDIO</div>
+    <p>&copy; 2026 Annetique. All rights reserved.</p>
+  </footer>
+
+  <script src="works_script.js"></script>
+</body>
+
+</html>

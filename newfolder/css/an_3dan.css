@@ -1,13 +1,71 @@
-#mainGridContentBanner {
-  width: 100vw;
-  padding-top:70px;
-  margin: 0;
-  padding: 200px 0;
-  background-color: #2d2d2d;
-    transform: translateY(-19px) translateX(-320px);
-
+/* ********* 새로 추가된 타이틀 영역 스타일 (an_3dan 전용 클래스) ********* */
+.an_3d-section-header {
+  text-align: left;
+  max-width: 1240px; 
+  margin: 0 auto 50px auto; 
+  margin-bottom: 90px;
+    padding: 140px 0;
+   
+  /* 충돌 방지 및 최상위 표시 */
+  position: relative; 
+  z-index: 99; 
 }
 
+/* [핵심] 로고와 텍스트 블록 전체를 가로로 정렬 */
+.an_3d--with-logo {
+    display: flex;
+    align-items: center; 
+    padding: 0 20px; 
+}
+
+/* 로고 이미지 스타일 */
+.an_3d-header-logo {
+    height: 50px; 
+    width: auto;
+    margin-right: 15px; 
+    flex-shrink: 0;
+}
+
+/* 텍스트 2단 블록을 감싸는 컨테이너 */
+.an_3d-text-wrap {
+    line-height: 1; 
+    position: relative; 
+    z-index: 100;
+}
+
+/* 메인 타이틀: 흰색, 우선순위 최상위, 블렌딩 강제 정상화 */
+.an_3d-main-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff !important; 
+  margin-bottom: 4px; 
+  line-height: 1; 
+  mix-blend-mode: normal; 
+}
+
+/* 서브 타이틀: 밝은 회색, 우선순위 최상위, 블렌딩 강제 정상화 */
+.an_3d-sub-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #cccccc !important; 
+  line-height: 1; 
+  mix-blend-mode: normal; 
+}
+/* ************************************************* */
+
+
+#mainGridContentBanner {
+  width: 100%;
+  padding-top:70px;
+  margin: 0;
+  padding: 100px 0; 
+  background-color: #2d2d2d;
+    transform: translateY(-19px);
+}
+.seciton .section_full{
+    width: 100% !important;
+    max-width: 100% !important;
+}
 .main-grids {
   max-width: 1240px;
   list-style: none;
@@ -19,7 +77,6 @@
   grid-template-columns: repeat(4, 1fr);
   /* 2행 설정 */
   grid-template-rows: auto;
-
 }
 
 /* ================================================= */
@@ -60,7 +117,7 @@
   transition: transform 0.3s ease;
 }
 
-/* 호버 오버레이 - ::after로 변경 */
+/* 호버 오버레이 (검은색 반투명) */
 .main-grids li .grid-image-link::after {
   content: '';
   position: absolute;
@@ -76,48 +133,67 @@
 }
 
 /* 텍스트 요소들 (숨김 - 하단 왼쪽 정렬) */
-.main-grids li .grid-title,
-.main-grids li .grid-description {
+/* 1. 부모가 되는 li에 기준점 설정 */
+.main-grids li {
+  position: relative;
+  overflow: hidden; /* 영역 밖으로 나가는 애니메이션 숨김 */
+}
+
+/* 2. 제목과 설명을 감싸는 박스 스타일 */
+.main-grids li .grid-info-box {
   position: absolute;
   left: 0;
+  bottom: 0;        /* 바닥에 붙임 */
   width: 100%;
-  padding: 10px 15px;
-  text-align: left;
+  padding: 20px 15px; /* 전체 박스의 여백 */
+  background-color: rgba(0, 0, 0, 0.7); /* 배경은 여기서 한 번만! */
+  
+  /* 애니메이션 설정 */
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  color: #ffffff;
-  z-index: 20;
-  text-decoration: none;
-  pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.7);
   transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 20;
+  pointer-events: none;
 }
 
+/* 3. 호버 시 박스 전체가 나타남 */
+.main-grids li:hover .grid-info-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. 내부 요소 스타일 (배경/위치값 제거) */
 .main-grids li .grid-title {
-  bottom: 40px;
+  display: block;
+  color: #ffffff;
   font-size: 1.1em;
   font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px; /* 제목과 설명 사이 간격 */
 }
 
 .main-grids li .grid-description {
-  bottom: 10px;
+  margin: 0;
+  color: #ffffff;
   font-size: 0.8em;
+  opacity: 0.8; /* 설명은 살짝 흐리게 가독성 조절 */
 }
-
 /* 호버 시 효과 */
 .main-grids li:hover .grid-image-link::after {
-  opacity: 0;
+  opacity: 0; /* 검은색 오버레이 제거 */
 }
 
 .main-grids li:hover img {
   transform: scale(1.05);
 }
 
+/* ⭐ [복구 완료] 호버 시 텍스트 나타나게 하는 코드 */
 .main-grids li:hover .grid-title,
 .main-grids li:hover .grid-description {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1; /* 텍스트 나타남 */
+  transform: translateY(0); /* 텍스트 위로 이동 */
 }
+/* ************************************** */
 
 /* ================================================= */
 /* **배치 핵심:** 4열 2행 구조에 따른 위치 지정 */
@@ -134,7 +210,7 @@
   grid-row: 1 / 2;
 }
 
-/* 2행 (Row 2): Item 3, Item 4 */
+/* 2행 (Row 2): Item 3, 4 */
 .item-3 {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -163,11 +239,35 @@
 /* **태블릿 미디어 쿼리 (Tablet: 2열, 3행 구조)** */
 /* ================================================= */
 @media (min-width: 769px) and (max-width: 1024px) {
+  
+  /* 헤더 섹션 태블릿 조정 */
+  .an_3d-section-header {
+      margin-bottom: 40px; 
+      padding-top: 40px;
+  }
+  
+  .an_3d-header-logo {
+      height: 40px; 
+  }
+  
+  .an_3d-main-title {
+      font-size: 26px;
+  }
+  
+  .an_3d-sub-title {
+      font-size: 15px;
+  }
+  
   .main-grids {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto;
   }
-
+@media (min-width: 1024px) {
+    #contents > .section_full_mainGridContentBanner{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
   /* Row 1: Item 1, 2 */
   .item-1 {
     grid-column: 1 / 2;
@@ -203,9 +303,33 @@
 }
 
 /* ================================================= */
-/* 미디어 쿼리 (반응형: 모바일/태블릿 시 1열로) */
+/* 미디어 쿼리 (반응형: 모바일 시 1열로) */
 /* ================================================= */
 @media (max-width: 768px) {
+  
+  /* 헤더 섹션 모바일 조정 */
+  .an_3d-section-header {
+      margin-bottom: 30px; 
+      padding-top: 30px;
+  }
+  
+  .an_3d--with-logo {
+      padding: 0 10px;
+  }
+
+  .an_3d-header-logo {
+      height: 35px;
+      margin-right: 10px;
+  }
+  
+  .an_3d-main-title {
+      font-size: 22px;
+  }
+  
+  .an_3d-sub-title {
+      font-size: 14px;
+  }
+  
   .main-grids {
     grid-template-columns: 1fr;
     /* 1열 */
@@ -227,18 +351,13 @@
   .main-grids li::before {
     padding-bottom: 100%;
   }
-
-  /* 모바일에서는 텍스트를 항상 보이도록 설정할 수도 있습니다. (선택 사항) */
-  /* .main-grids li .grid-title, .main-grids li .grid-description { opacity: 1; transform: none; color: #333; }
-            .main-grids li .grid-image-link::before { opacity: 0; } */
 }
-
 
 
 .full-width-wrapper02{
   width:100vw !important;
   margin: 0 !important;
   padding: 0 !important;
-        background-color: #2d2d2d;
-      transform: translateY(-19px);
+  background-color: #2d2d2d;
+  transform: translateY(-19px);
 }

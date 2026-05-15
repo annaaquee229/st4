@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANNETIQUE STUDIO - RESTORED FINAL</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* [1] 레이아웃 및 스냅 구조 정상화 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Pretendard', sans-serif;
+      overflow: hidden;
+      background: #000;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 200px;
+      background: rgba(10, 10, 10, 0.2);
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    header nav ul {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .main-wrapper {
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+    }
+
+    .outer-section {
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* [2] 섹션 1: 슬라이더 및 리스트 아이템 복구 */
+    .x-slider-container {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .x-slide {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    /* 슬라이드 내부 콘텐츠 (기존 리스트 구조 복구) */
+    .content-box {
+      position: absolute;
+      top: 50%;
+      left: 200px;
+      transform: translateY(-50%);
+      color: #fff;
+      z-index: 10;
+    }
+
+    .main-title {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+
+    .slide-info-list {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .slide-info-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .slide-info-list li i {
+      font-size: 1.2rem;
+    }
+
+    .common-slider-nav {
+      position: absolute;
+      bottom: 80px;
+      left: 200px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .view-btn {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      padding: 12px 30px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .view-btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .x-nav-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .x-nav-wrapper {
+      width: 180px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      overflow: hidden;
+    }
+
+    .x-nav-bar {
+      width: 33.33%;
+      height: 100%;
+      background: #fff;
+      transition: 0.6s;
+    }
+
+    .slide-ctrl-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    /* [3] 섹션 2: 세로 스냅 (스크롤바 이중 오류 완전 해결) */
+    .inner-scroll-box {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .inner-scroll-box::-webkit-scrollbar {
+      display: none;
+    }
+
+    .inner-slide {
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .bg-y1 {
+      background: #1a1a1a;
+    }
+
+    .bg-y2 {
+      background: #222;
+    }
+
+    .bg-y3 {
+      background: #2a2a2a;
+    }
+
+    .scroll-dots {
+      position: fixed;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.4s;
+    }
+
+    .scroll-dots.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #fff;
+      transform: scale(1.2);
+    }
+
+    /* [4] 섹션 3: 비대칭 스토리 그리드 (기존 텍스트 및 구조 완벽 복구) */
+    .section-grid {
+      background: #2b2b2b;
+      display: flex;
+      align-items: center;
+      padding: 0 200px;
+    }
+
+    .grid-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .header-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 240px;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .item-large {
+      grid-column: 3 / 5;
+      grid-row: 1 / 3;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4);
+      transition: 0.6s;
+    }
+
+    .grid-item:hover img {
+      filter: brightness(1);
+      transform: scale(1.05);
+    }
+
+    .info-overlay {
+      position: absolute;
+      bottom: -120px;
+      left: 0;
+      width: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.8);
+      transition: 0.4s;
+      color: #fff;
+    }
+
+    .grid-item:hover .info-overlay {
+      bottom: 0;
+    }
+
+    /* [5] 섹션 4 및 푸터 복구 */
+    .section-contact {
+      background: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-title {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      width: 100%;
+      height: 180px;
+      background: #000;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: end;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">ANNETIQUE STUDIO</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="works.html">WORKS</a></li>
+        <li><a href="concept.html">CONCEPT</a></li>
+        <li><a href="skills.html">SKILLS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="scroll-dots" id="scrollDots">
+    <div class="dot active" onclick="scrollToInner(0)"></div>
+    <div class="dot" onclick="scrollToInner(1)"></div>
+    <div class="dot" onclick="scrollToInner(2)"></div>
+  </div>
+
+  <div class="main-wrapper" id="outerContainer">
+
+    <section class="outer-section">
+      <div class="common-slider-nav">
+        <a href="works.html" id="dynamicBtn" class="view-btn">PROJECT VIEW</a>
+        <div class="x-nav-container">
+          <div class="x-nav-wrapper">
+            <div class="x-nav-bar" id="xNavBar"></div>
+          </div>
+          <button id="slideAutoBtn" class="slide-ctrl-btn"><span class="material-icons">pause</span></button>
+        </div>
+      </div>
+      <div class="x-slider-container" id="xSlider">
+        <div class="x-slide" style="background-image: url('https://picsum.photos/id/10/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">INFINITY<br>VISION</h2>
+            <ul class="slide-info-list">
+              <li><i class="material-icons">A</i> ANNETIQUE STYLE</li>
+              <li><i class="material-icons">V</i> VISIONARY DESIGN</li>
+            </ul>
+          </div>
+        </div>
+        <div class="x-slide" style="background-image: url('https://picsum.photos/id/42/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">ANNETIQUE<br>COLLECTION</h2>
+            <ul class="slide-info-list">
+              <li><i class="material-icons">palette</i> BRAND IDENTITY</li>
+              <li><i class="material-icons">brush</i> CREATIVE ART</li>
+            </ul>
+          </div>
+        </div>
+        <div class="x-slide" style="background-image: url('https://picsum.photos/id/48/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">SKILL<br>EXPERIENCE</h2>
+            <ul class="slide-info-list">
+              <li><i class="material-icons">code</i> WEB INTERFACE</li>
+              <li><i class="material-icons">layers</i> UI/UX DESIGN</li>
+            </ul>
+          </div>
+        </div>
+        <div class="x-slide" style="background-image: url('https://picsum.photos/id/10/1920/1080');">
+          <div class="overlay"></div>
+          <div class="content-box">
+            <h2 class="main-title">INFINITY<br>VISION</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="outer-section" id="verticalSection">
+      <div class="inner-scroll-box" id="innerScroll">
+        <div class="inner-slide bg-y1">
+          <h2>CONCEPT STORY 01</h2>
+          <p>Our Creative Process</p>
+        </div>
+        <div class="inner-slide bg-y2">
+          <h2>CONCEPT STORY 02</h2>
+          <p>Design Philosophy</p>
+        </div>
+        <div class="inner-slide bg-y3">
+          <h2>CONCEPT STORY 03</h2>
+          <p>Future Identity</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="outer-section section-grid">
+      <div class="grid-container">
+        <div class="section-header">
+          <img src="https://via.placeholder.com/40" class="header-icon" alt="icon">
+          <div>
+            <h2>STORY</h2>
+            <p>다양한 ANNETIQUE의 프로젝트 기록</p>
+          </div>
+        </div>
+        <ul class="works-grid">
+          <li class="grid-item"><img src="https://picsum.photos/id/20/600/600">
+            <div class="info-overlay">
+              <h3>Brand Mockup</h3>
+              <p>전통적인 감성을 현대적으로 해석</p>
+            </div>
+          </li>
+          <li class="grid-item"><img src="https://picsum.photos/id/26/600/600">
+            <div class="info-overlay">
+              <h3>Tique Mascot</h3>
+              <p>브랜드 마스코트 디자인 스토리</p>
+            </div>
+          </li>
+          <li class="grid-item item-large"><img src="https://picsum.photos/id/36/1200/1200">
+            <div class="info-overlay">
+              <h3>Character Illustration</h3>
+              <p>위트 있는 드로잉 시리즈</p>
+            </div>
+          </li>
+          <li class="grid-item"><img src="https://picsum.photos/id/11/600/600">
+            <div class="info-overlay">
+              <h3>Art Frame</h3>
+              <p>시각 예술 아카이브</p>
+            </div>
+          </li>
+          <li class="grid-item"><img src="https://picsum.photos/id/48/600/600">
+            <div class="info-overlay">
+              <h3>Merchandise</h3>
+              <p>에코백 및 브랜드 굿즈</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="outer-section section-contact">
+      <h1 class="contact-title">CONTACT US</h1>
+      <p style="color:#666; font-size:1.2rem;">Let's work together</p>
+    </section>
+
+    <footer>
+      <div style="font-weight:900; color:#fff; margin-bottom:10px;">ANNETIQUE STUDIO</div>
+      <p>&copy; 2026 Annetique. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    /* 슬라이더 제어 */
+    let currentX = 0; const totalSlides = 3;
+    const xSlider = document.getElementById('xSlider');
+    const xNavBar = document.getElementById('xNavBar');
+    const slideAutoBtn = document.getElementById('slideAutoBtn');
+    let isAutoPlay = true; let slideInterval = setInterval(moveX, 3000);
+
+    function moveX() {
+      currentX++; xSlider.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)"; updateSlider();
+      if (currentX === totalSlides) { setTimeout(() => { xSlider.style.transition = "none"; currentX = 0; updateSlider(); }, 600); }
+    }
+    function updateSlider() {
+      xSlider.style.transform = `translateX(-${currentX * 100}vw)`;
+      const realIndex = currentX % totalSlides;
+      if (xNavBar) xNavBar.style.transform = `translateX(${realIndex * 100}%)`;
+    }
+    slideAutoBtn.addEventListener('click', () => {
+      const icon = slideAutoBtn.querySelector('.material-icons');
+      if (isAutoPlay) { clearInterval(slideInterval); icon.innerText = "play_arrow"; }
+      else { slideInterval = setInterval(moveX, 3000); icon.innerText = "pause"; }
+      isAutoPlay = !isAutoPlay;
+    });
+
+    /* 스냅 및 도트 제어 */
+    const innerScroll = document.getElementById('innerScroll');
+    const scrollDots = document.getElementById('scrollDots');
+    const dots = document.querySelectorAll('.dot');
+    const outerContainer = document.getElementById('outerContainer');
+    const verticalSection = document.getElementById('verticalSection');
+
+    innerScroll.addEventListener('scroll', () => {
+      const index = Math.round(innerScroll.scrollTop / window.innerHeight);
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    });
+
+    outerContainer.addEventListener('scroll', () => {
+      const vTop = verticalSection.offsetTop;
+      const current = outerContainer.scrollTop;
+      if (current >= vTop - 50 && current < vTop + window.innerHeight - 50) { scrollDots.classList.add('visible'); }
+      else { scrollDots.classList.remove('visible'); }
+    });
+    function scrollToInner(index) { innerScroll.scrollTo({ top: index * window.innerHeight, behavior: 'smooth' }); }
+  </script>
+</body>
+
+</html>

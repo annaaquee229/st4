@@ -1,0 +1,433 @@
+/* --------------------------------------------------
+   [CSS] ANNETIQUE STUDIO - 표준 미디어 쿼리 및 절대 좌표 좌측 고정본
+-------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Pretendard', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  background: rgba(10, 10, 10, 0.2);
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+header nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* 메인 래퍼 및 스냅 */
+.main-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+.inner-scroll-box {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+.main-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.outer-section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* [섹션 1] 가로 슬라이더 */
+.section-x {
+  background: #eee;
+  overflow: hidden;
+  position: relative;
+}
+
+.x-slider-container {
+  display: flex;
+  width: 400%;
+  height: 100%;
+}
+
+/* 400% 대형 Flex 안에서 자식들의 축이 꼬이지 않도록 absolute 기준점 역할만 부여 */
+.x-slide {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+  position: relative; 
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* 브라우저의 가로축 연산 오류에 휘말리지 않게 absolute로 띄워 화면 좌측에 고정 */
+.content-box {
+  position: absolute;
+  left: 10%;            
+  top: 50%;             
+  transform: translateY(-50%); 
+  z-index: 2;
+  color: #fff;
+  width: 100%;
+  max-width: 600px;     
+  text-align: left;     
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.x-text {
+  margin-bottom: 40px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.x-text ul {
+  list-style: none;
+  text-align: left;
+}
+
+.x-text ul li {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.8;
+  padding: 0.2rem 0;
+  text-align: left;
+}
+
+/* 네비게이션 및 슬라이드 바 위치 */
+.common-slider-nav {
+  position: absolute;
+  bottom: 80px;
+  left: 10%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.view-btn {
+  display: inline-flex;
+  padding: 12px 40px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.x-nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.x-nav-wrapper {
+  width: 150px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-ctrl-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 5px;
+  min-width: 45px;
+  text-align: right;
+  transition: opacity 0.3s;
+}
+
+.slide-ctrl-btn:hover {
+  opacity: 0.7;
+}
+
+.x-nav-bar {
+  width: 33.33%;
+  height: 100%;
+  background: #fff;
+  transition: transform 0.5s;
+}
+
+/* [섹션 2] 세로 스냅 */
+.inner-scroll-box {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.inner-scroll-box::-webkit-scrollbar {
+  display: none;
+}
+
+.inner-slide {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.bg-y1 {
+  background: #f383a7;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-y2 {
+  background: #f383a7;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-y3 {
+  background: #f383a7;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+/* [섹션 3] 비대칭 그리드 레이아웃 */
+.section-grid {
+  background: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.works-wrapper {
+  width: 90%;
+  max-width: 1300px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 10px;
+  list-style: none;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 1 / 1;
+}
+
+.item-large {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  aspect-ratio: auto;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  transition: all 0.5s ease;
+}
+
+.grid-item:hover img {
+  filter: brightness(1);
+  transform: scale(1.03);
+}
+
+.info-overlay {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: bottom 0.4s ease;
+}
+
+.grid-item:hover .info-overlay {
+  bottom: 0;
+}
+
+/* [섹션 4] Contact */
+.section-contact {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* 푸터 */
+footer {
+  width: 100%;
+  height: 150px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: end;
+}
+
+/* 도트 인디케이터 */
+.scroll-dots {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.scroll-dots.visible {
+  opacity: 1;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #fff;
+  transform: scale(1.4);
+}
+
+
+/* --------------------------------------------------
+   [미디어 쿼리 - 초대형 해상도 삭제 및 압축 수정본]
+-------------------------------------------------- */
+
+/* 1. 일반 데스크탑 전체 통합 (1201px 이상 해상도 칼매칭) */
+@media (min-width: 1201px) {
+  header { padding: 0 10%; }
+  .common-slider-nav { left: 10%; }
+  .content-box { left: 10%; }  
+}
+
+/* 2. 태블릿/작은 노트북 (769px ~ 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  header { padding: 0 50px; }
+  .common-slider-nav { left: 50px; }
+  .content-box { left: 50px; }
+}
+
+/* 3. 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  header { padding: 0 20px; }
+  .common-slider-nav { left: 20px; }
+  .content-box { 
+    left: 20px; 
+    max-width: calc(100% - 40px); 
+    top: 45%; 
+  }
+  .main-title { font-size: 2.2rem; line-height: 1.3; }
+  .x-text { padding-left: 10px; }
+  .x-text ul li { font-size: 0.95rem; }
+}
